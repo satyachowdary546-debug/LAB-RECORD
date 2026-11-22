@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>palindrome Number</title>
+</head>
+<body>
+    <script>
+        let number=153;
+        let sum=0;
+        let temp=number;
+        let digits=number.toString().length
+        while(temp>0){
+            let rem=temp%10;
+            sum+=rem**digits;
+            temp=Math.floor(temp/10)
+        }
+        if(number==sum){
+            document.write(number+" is a armstrong number");
+        }
+        else{
+            document.write(number+" is not a armstrong number");
+        }
+    </script>
+</body>
+</html>
