@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vignan University | Student Clubs</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+            color:#333;
+            background:#fff;
+            line-height:1.6;
+        }
+
+        a{
+            text-decoration:none;
+        }
+
+        img{
+            width:100%;
+            display:block;
+        }
+
+        .container{
+            width:90%;
+            max-width:1200px;
+            margin:auto;
+        }
+
+
+        /* =====================================
+           TOP BAR
+        ===================================== */
+
+        .topbar{
+            background:#8b1731;
+            color:#fff;
+            font-size:13px;
+        }
+
+        .topbar-inner{
+            min-height:38px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        .top-links{
+            display:flex;
+            gap:20px;
+        }
+
+        .top-links a{
+            color:#fff;
+        }
+
+
+        /* =====================================
+           HEADER
+        ===================================== */
+
+        .main-header{
+            background:#fff;
+            border-bottom:1px solid #e5e5e5;
+        }
+
+        .header-inner{
+            min-height:100px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+        }
+
+        .university-brand{
+            display:flex;
+            align-items:center;
+            gap:18px;
+        }
+
+        .university-logo{
+            width:75px;
+            height:75px;
+            border-radius:50%;
+            background:#8b1731;
+            color:#fff;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:25px;
+            font-weight:bold;
+            border:5px solid #e8cfcf;
+        }
+
+        .brand-text h1{
+            color:#8b1731;
+            font-size:25px;
+        }
+
+        .brand-text p{
+            color:#777;
+            font-size:13px;
+        }
+
+        .header-contact{
+            display:flex;
+            gap:30px;
+            align-items:center;
+        }
+
+        .contact-item{
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
+
+        .contact-icon{
+            color:#8b1731;
+            font-size:22px;
+        }
+
+        .contact-item small{
+            display:block;
+            color:#888;
+            font-size:11px;
+        }
+
+        .contact-item strong{
+            color:#444;
+            font-size:13px;
+        }
+
+
+        /* =====================================
+           NAVIGATION
+        ===================================== */
+
+        .navigation{
+            background:#333;
+        }
+
+        .nav-inner{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+
+        .navigation a{
+            color:#fff;
+            padding:16px 22px;
+            font-size:14px;
+            border-right:1px solid rgba(255,255,255,.08);
+            transition:.3s;
+        }
+
+        .navigation a:hover,
+        .navigation a.active{
+            background:#8b1731;
+        }
+
+
+        /* =====================================
+           PAGE HERO
+        ===================================== */
+
+        .page-hero{
+            height:390px;
+            position:relative;
+
+            background:
+            url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=2000&q=90");
+
+            background-size:cover;
+            background-position:center;
+        }
+
+        .page-hero::before{
+            content:"";
+            position:absolute;
+            inset:0;
+            background:
+            linear-gradient(
+                90deg,
+                rgba(0,0,0,.75),
+                rgba(0,0,0,.20)
+            );
+        }
+
+        .page-hero-content{
+            position:relative;
+            z-index:2;
+            height:100%;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            color:#fff;
+            max-width:700px;
+        }
+
+        .page-hero-content small{
+            color:#f1c7c7;
+            font-size:14px;
+            letter-spacing:2px;
+            margin-bottom:12px;
+        }
+
+        .page-hero-content h2{
+            font-size:50px;
+            line-height:1.1;
+            margin-bottom:18px;
+        }
+
+        .page-hero-content h2 span{
+            color:#f2b4b4;
+        }
+
+        .page-hero-content p{
+            font-size:17px;
+            color:#eee;
+            max-width:650px;
+        }
+
+
+        /* =====================================
+           SECTION
+        ===================================== */
+
+        .section{
+            padding:75px 0;
+        }
+
+        .section-heading{
+            text-align:center;
+            margin-bottom:45px;
+        }
+
+        .section-heading h2{
+            color:#8b1731;
+            font-size:32px;
+            margin-bottom:10px;
+        }
+
+        .section-heading p{
+            color:#777;
+            max-width:750px;
+            margin:auto;
+            font-size:15px;
+        }
+
+        .heading-line{
+            width:55px;
+            height:3px;
+            background:#8b1731;
+            margin:15px auto;
+        }
+
+
+        /* =====================================
+           INTRO
+        ===================================== */
+
+        .intro-grid{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:50px;
+            align-items:center;
+        }
+
+        .intro-image{
+            height:350px;
+            overflow:hidden;
+        }
+
+        .intro-image img{
+            height:100%;
+            object-fit:cover;
+        }
+
+        .intro-content h3{
+            color:#444;
+            font-size:27px;
+            margin-bottom:18px;
+        }
+
+        .intro-content p{
+            color:#666;
+            font-size:15px;
+            margin-bottom:15px;
+        }
+
+
+        /* =====================================
+           CLUB CARDS
+        ===================================== */
+
+        .clubs-section{
+            background:#f6f6f6;
+        }
+
+        .club-grid{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:25px;
+        }
+
+        .club-card{
+            background:#fff;
+            border:1px solid #ddd;
+            transition:.3s;
+        }
+
+        .club-card:hover{
+            transform:translateY(-6px);
+            box-shadow:0 8px 25px rgba(0,0,0,.12);
+        }
+
+        .club-image{
+            height:190px;
+            overflow:hidden;
+        }
+
+        .club-image img{
+            height:100%;
+            object-fit:cover;
+            transition:.4s;
+        }
+
+        .club-card:hover .club-image img{
+            transform:scale(1.05);
+        }
+
+        .club-content{
+            padding:22px;
+        }
+
+        .club-icon{
+            font-size:32px;
+            margin-bottom:10px;
+        }
+
+        .club-content h3{
+            color:#8b1731;
+            font-size:20px;
+            margin-bottom:10px;
+        }
+
+        .club-content p{
+            color:#777;
+            font-size:14px;
+            margin-bottom:12px;
+        }
+
+        .club-link{
+            color:#8b1731;
+            font-size:13px;
+            font-weight:bold;
+        }
+
+
+        /* =====================================
+           BENEFITS
+        ===================================== */
+
+        .benefit-grid{
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            gap:20px;
+        }
+
+        .benefit{
+            border:1px solid #ddd;
+            text-align:center;
+            padding:30px 18px;
+        }
+
+        .benefit-icon{
+            font-size:35px;
+            margin-bottom:12px;
+        }
+
+        .benefit h3{
+            color:#8b1731;
+            font-size:18px;
+            margin-bottom:8px;
+        }
+
+        .benefit p{
+            color:#777;
+            font-size:13px;
+        }
+
+
+        /* =====================================
+           HOW TO JOIN
+        ===================================== */
+
+        .join-section{
+            background:#f7f7f7;
+        }
+
+        .join-grid{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:25px;
+        }
+
+        .join-card{
+            background:#fff;
+            border:1px solid #ddd;
+            padding:30px;
+            text-align:center;
+        }
+
+        .join-number{
+            width:50px;
+            height:50px;
+            border-radius:50%;
+            background:#8b1731;
+            color:#fff;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            margin:0 auto 15px;
+            font-size:20px;
+            font-weight:bold;
+        }
+
+        .join-card h3{
+            color:#444;
+            margin-bottom:10px;
+        }
+
+        .join-card p{
+            color:#777;
+            font-size:14px;
+        }
+
+
+        /* =====================================
+           CTA
+        ===================================== */
+
+        .cta{
+            background:#8b1731;
+            color:#fff;
+            text-align:center;
+            padding:55px 0;
+        }
+
+        .cta h2{
+            font-size:30px;
+            margin-bottom:10px;
+        }
+
+        .cta p{
+            color:#f1d9dd;
+            margin-bottom:25px;
+        }
+
+        .secondary-btn{
+            display:inline-block;
+            background:#fff;
+            color:#8b1731;
+            padding:12px 25px;
+            font-size:14px;
+            font-weight:bold;
+            border-radius:3px;
+        }
+
+
+        /* =====================================
+           FOOTER
+        ===================================== */
+
+        footer{
+            background:#292929;
+            color:#ddd;
+        }
+
+        .footer-grid{
+            padding:55px 0;
+            display:grid;
+            grid-template-columns:2fr 1fr 1fr 1.2fr;
+            gap:40px;
+        }
+
+        .footer-brand h3{
+            color:#fff;
+            font-size:22px;
+            margin-bottom:12px;
+        }
+
+        .footer-brand p{
+            color:#aaa;
+            font-size:14px;
+        }
+
+        .footer-column h3{
+            color:#fff;
+            font-size:16px;
+            margin-bottom:18px;
+        }
+
+        .footer-column a{
+            display:block;
+            color:#aaa;
+            font-size:13px;
+            margin:8px 0;
+        }
+
+        .footer-column a:hover{
+            color:#fff;
+        }
+
+        .footer-column p{
+            color:#aaa;
+            font-size:13px;
+            margin:7px 0;
+        }
+
+        .copyright{
+            border-top:1px solid #444;
+            text-align:center;
+            padding:18px;
+            color:#888;
+            font-size:12px;
+        }
+
+
+        /* =====================================
+           MOBILE
+        ===================================== */
+
+        @media(max-width:1000px){
+
+            .header-contact{
+                display:none;
+            }
+
+            .club-grid{
+                grid-template-columns:repeat(2,1fr);
+            }
+
+            .benefit-grid{
+                grid-template-columns:repeat(2,1fr);
+            }
+
+            .footer-grid{
+                grid-template-columns:repeat(2,1fr);
+            }
+
+        }
+
+
+        @media(max-width:700px){
+
+            .top-links{
+                display:none;
+            }
+
+            .topbar-inner{
+                justify-content:center;
+            }
+
+            .header-inner{
+                justify-content:center;
+            }
+
+            .navigation{
+                overflow-x:auto;
+            }
+
+            .nav-inner{
+                justify-content:flex-start;
+                width:max-content;
+            }
+
+            .navigation a{
+                padding:13px 15px;
+                white-space:nowrap;
+            }
+
+            .page-hero{
+                height:450px;
+            }
+
+            .page-hero-content h2{
+                font-size:38px;
+            }
+
+            .page-hero-content p{
+                font-size:15px;
+            }
+
+            .intro-grid,
+            .club-grid,
+            .join-grid{
+                grid-template-columns:1fr;
+            }
+
+            .benefit-grid{
+                grid-template-columns:1fr 1fr;
+            }
+
+            .footer-grid{
+                grid-template-columns:1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================
+     TOP BAR
+========================================== -->
+
+<div class="topbar">
+
+    <div class="container topbar-inner">
+
+        <div>
+            University Campus Life Portal
+        </div>
+
+        <div class="top-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="#clubs">
+                Clubs
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ==========================================
+     HEADER
+========================================== -->
+
+<header class="main-header">
+
+    <div class="container header-inner">
+
+        <a href="index.html" class="university-brand">
+
+            <div class="university-logo">
+                VU
+            </div>
+
+            <div class="brand-text">
+
+                <h1>
+                    VIGNAN UNIVERSITY
+                </h1>
+
+                <p>
+                    Campus Life & Student Portal
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <div class="header-contact">
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    ☎
+                </div>
+
+                <div>
+
+                    <small>
+                        Student Support
+                    </small>
+
+                    <strong>
+                        Campus Help Desk
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    ✉
+                </div>
+
+                <div>
+
+                    <small>
+                        Email
+                    </small>
+
+                    <strong>
+                        student@university.edu
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ==========================================
+     NAVIGATION
+========================================== -->
+
+<nav class="navigation">
+
+    <div class="container nav-inner">
+
+        <a href="index.html">
+            HOME
+        </a>
+
+        <a href="index.html#about">
+            ABOUT
+        </a>
+
+        <a href="index.html#campus-life" class="active">
+            CAMPUS LIFE
+        </a>
+
+        <a href="index.html#services">
+            SERVICES
+        </a>
+
+        <a href="index.html#events">
+            EVENTS
+        </a>
+
+        <a href="#contact">
+            CONTACT
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- ==========================================
+     HERO
+========================================== -->
+
+<section class="page-hero">
+
+    <div class="container page-hero-content">
+
+        <small>
+            VIGNAN UNIVERSITY CAMPUS LIFE
+        </small>
+
+        <h2>
+            Student <span>Clubs</span>
+        </h2>
+
+        <p>
+            Discover communities, develop your talents,
+            meet new people and make your university
+            experience more exciting through student clubs.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     INTRODUCTION
+========================================== -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>
+                Explore Student Clubs
+            </h2>
+
+            <div class="heading-line"></div>
+
+            <p>
+                Student clubs provide opportunities to learn,
+                create, collaborate and participate in activities
+                beyond the classroom.
+            </p>
+
+        </div>
+
+
+        <div class="intro-grid">
+
+            <div class="intro-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1000&q=85"
+                    alt="University Student Clubs">
+
+            </div>
+
+
+            <div class="intro-content">
+
+                <h3>
+                    Connect, Create & Grow
+                </h3>
+
+                <p>
+                    University life becomes more enjoyable when
+                    students have opportunities to connect with
+                    others who share similar interests.
+                </p>
+
+                <p>
+                    Student clubs encourage teamwork, creativity,
+                    leadership and communication skills while
+                    giving students a platform to explore their
+                    interests and talents.
+                </p>
+
+                <p>
+                    From technical activities and cultural events
+                    to literature, arts and social initiatives,
+                    students can discover a community that matches
+                    their interests.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     CLUB CATEGORIES
+========================================== -->
+
+<section id="clubs" class="section clubs-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>
+                Club Categories
+            </h2>
+
+            <div class="heading-line"></div>
+
+            <p>
+                Explore different types of student communities
+                available on campus.
+            </p>
+
+        </div>
+
+
+        <div class="club-grid">
+
+
+            <!-- TECHNICAL CLUB -->
+
+            <div class="club-card">
+
+                <div class="club-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=85"
+                        alt="Technical Club">
+
+                </div>
+
+                <div class="club-content">
+
+                    <div class="club-icon">
+                        💻
+                    </div>
+
+                    <h3>
+                        Technical Clubs
+                    </h3>
+
+                    <p>
+                        Explore programming, technology,
+                        innovation, robotics and project-based
+                        activities.
+                    </p>
+
+                    <a href="#join" class="club-link">
+                        Explore Technical Activities →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- CULTURAL CLUB -->
+
+            <div class="club-card">
+
+                <div class="club-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=900&q=85"
+                        alt="Cultural Club">
+
+                </div>
+
+                <div class="club-content">
+
+                    <div class="club-icon">
+                        🎭
+                    </div>
+
+                    <h3>
+                        Cultural Clubs
+                    </h3>
+
+                    <p>
+                        Participate in cultural programmes,
+                        performances, celebrations and
+                        student events.
+                    </p>
+
+                    <a href="#join" class="club-link">
+                        Explore Cultural Activities →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- LITERARY CLUB -->
+
+            <div class="club-card">
+
+                <div class="club-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=85"
+                        alt="Literary Club">
+
+                </div>
+
+                <div class="club-content">
+
+                    <div class="club-icon">
+                        📖
+                    </div>
+
+                    <h3>
+                        Literary Clubs
+                    </h3>
+
+                    <p>
+                        Develop writing, reading, speaking and
+                        communication skills through literary
+                        activities.
+                    </p>
+
+                    <a href="#join" class="club-link">
+                        Explore Literary Activities →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ARTS CLUB -->
+
+            <div class="club-card">
+
+                <div class="club-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=900&q=85"
+                        alt="Arts Club">
+
+                </div>
+
+                <div class="club-content">
+
+                    <div class="club-icon">
+                        🎨
+                    </div>
+
+                    <h3>
+                        Arts & Creative Clubs
+                    </h3>
+
+                    <p>
+                        Discover painting, photography, design,
+                        music and other creative interests.
+                    </p>
+
+                    <a href="#join" class="club-link">
+                        Explore Creative Activities →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- SOCIAL CLUB -->
+
+            <div class="club-card">
+
+                <div class="club-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=900&q=85"
+                        alt="Social Club">
+
+                </div>
+
+                <div class="club-content">
+
+                    <div class="club-icon">
+                        🤝
+                    </div>
+
+                    <h3>
+                        Social Clubs
+                    </h3>
+
+                    <p>
+                        Participate in community service,
+                        awareness programmes and social
+                        responsibility activities.
+                    </p>
+
+                    <a href="#join" class="club-link">
+                        Explore Social Activities →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ENTREPRENEURSHIP -->
+
+            <div class="club-card">
+
+                <div class="club-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=85"
+                        alt="Entrepreneurship Club">
+
+                </div>
+
+                <div class="club-content">
+
+                    <div class="club-icon">
+                        🚀
+                    </div>
+
+                    <h3>
+                        Entrepreneurship Clubs
+                    </h3>
+
+                    <p>
+                        Learn about ideas, startups, innovation,
+                        business planning and leadership.
+                    </p>
+
+                    <a href="#join" class="club-link">
+                        Explore Entrepreneurship →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     BENEFITS
+========================================== -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>
+                Why Join a Club?
+            </h2>
+
+            <div class="heading-line"></div>
+
+            <p>
+                Student clubs help you make the most of
+                your university experience.
+            </p>
+
+        </div>
+
+
+        <div class="benefit-grid">
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    🤝
+                </div>
+
+                <h3>
+                    Build Connections
+                </h3>
+
+                <p>
+                    Meet students with similar interests
+                    and build lasting friendships.
+                </p>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    💡
+                </div>
+
+                <h3>
+                    Develop Skills
+                </h3>
+
+                <p>
+                    Improve communication, creativity,
+                    teamwork and leadership skills.
+                </p>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    🏆
+                </div>
+
+                <h3>
+                    Gain Experience
+                </h3>
+
+                <p>
+                    Participate in activities, events,
+                    competitions and projects.
+                </p>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    🌟
+                </div>
+
+                <h3>
+                    Discover Yourself
+                </h3>
+
+                <p>
+                    Explore new interests and discover
+                    your talents outside academics.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     HOW TO JOIN
+========================================== -->
+
+<section id="join" class="section join-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>
+                How to Join a Club
+            </h2>
+
+            <div class="heading-line"></div>
+
+            <p>
+                Getting involved in student activities
+                is simple.
+            </p>
+
+        </div>
+
+
+        <div class="join-grid">
+
+
+            <div class="join-card">
+
+                <div class="join-number">
+                    01
+                </div>
+
+                <h3>
+                    Explore
+                </h3>
+
+                <p>
+                    Browse the available club categories
+                    and identify activities that match
+                    your interests.
+                </p>
+
+            </div>
+
+
+            <div class="join-card">
+
+                <div class="join-number">
+                    02
+                </div>
+
+                <h3>
+                    Connect
+                </h3>
+
+                <p>
+                    Contact the club coordinators or
+                    student representatives to learn
+                    more about activities.
+                </p>
+
+            </div>
+
+
+            <div class="join-card">
+
+                <div class="join-number">
+                    03
+                </div>
+
+                <h3>
+                    Participate
+                </h3>
+
+                <p>
+                    Join activities, attend meetings and
+                    actively participate in the club
+                    community.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     CTA
+========================================== -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <h2>
+            Find Your Community
+        </h2>
+
+        <p>
+            Explore your interests, meet new people
+            and make your campus experience memorable.
+        </p>
+
+        <a href="index.html#campus-life" class="secondary-btn">
+            Back to Campus Life
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer id="contact">
+
+    <div class="container footer-grid">
+
+
+        <div class="footer-brand">
+
+            <h3>
+                VIGNAN UNIVERSITY
+            </h3>
+
+            <p>
+                Campus Life & Student Portal
+            </p>
+
+            <br>
+
+            <p>
+                A digital portal designed to help
+                students discover and experience
+                campus life.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Campus Life
+            </h3>
+
+            <a href="hostels.html">
+                Hostels
+            </a>
+
+            <a href="sports.html">
+                Sports
+            </a>
+
+            <a href="clubs.html">
+                Student Clubs
+            </a>
+
+            <a href="library.html">
+                Library
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Services
+            </h3>
+
+            <a href="transportation.html">
+                Transportation
+            </a>
+
+            <a href="facilities.html">
+                Campus Facilities
+            </a>
+
+            <a href="index.html#events">
+                Events
+            </a>
+
+            <a href="index.html#about">
+                About Campus
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Contact
+            </h3>
+
+            <p>
+                📍 University Campus
+            </p>
+
+            <p>
+                Andhra Pradesh, India
+            </p>
+
+            <p>
+                ☎ Student Support Centre
+            </p>
+
+            <p>
+                ✉ student@university.edu
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Vignan University Campus Life Portal.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>

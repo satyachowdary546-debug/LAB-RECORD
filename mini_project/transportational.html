@@ -1,0 +1,963 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Transportation | Vignan University</title>
+
+    <style>
+        /* ==============================
+           GENERAL STYLES
+        ============================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+
+        /* ==============================
+           TOP BAR
+        ============================== */
+
+        .topbar {
+            background-color: #8b1731;
+            color: white;
+            text-align: center;
+            padding: 8px;
+            font-size: 14px;
+        }
+
+
+        /* ==============================
+           HEADER
+        ============================== */
+
+        header {
+            background-color: white;
+            padding: 20px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+            background-color: #8b1731;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .university-name h1 {
+            color: #8b1731;
+            font-size: 30px;
+            margin-bottom: 3px;
+        }
+
+        .university-name p {
+            color: #666;
+            font-size: 15px;
+        }
+
+
+        /* ==============================
+           NAVIGATION
+        ============================== */
+
+        nav {
+            background-color: #333;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 22px;
+            font-size: 15px;
+        }
+
+        nav ul li a:hover {
+            background-color: #8b1731;
+        }
+
+
+        /* ==============================
+           HERO SECTION
+        ============================== */
+
+        .hero {
+            height: 400px;
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.55),
+                    rgba(0, 0, 0, 0.55)
+                ),
+                url("https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h2 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+        }
+
+
+        /* ==============================
+           SECTION COMMON STYLES
+        ============================== */
+
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #8b1731;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .section-description {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: #666;
+        }
+
+
+        /* ==============================
+           INTRODUCTION
+        ============================== */
+
+        .intro {
+            background-color: white;
+        }
+
+        .intro-text {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            font-size: 17px;
+        }
+
+
+        /* ==============================
+           TRANSPORT SERVICES
+        ============================== */
+
+        .services {
+            background-color: #f5f5f5;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background-color: white;
+            padding: 30px 25px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.10);
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            color: #8b1731;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 15px;
+        }
+
+
+        /* ==============================
+           TRANSPORT FACILITIES
+        ============================== */
+
+        .facilities {
+            background-color: white;
+        }
+
+        .facility-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .facility-box {
+            padding: 25px;
+            border-left: 5px solid #8b1731;
+            background-color: #f8f8f8;
+        }
+
+        .facility-box h3 {
+            color: #8b1731;
+            margin-bottom: 10px;
+        }
+
+        .facility-box p {
+            color: #555;
+        }
+
+
+        /* ==============================
+           ROUTES AND SAFETY
+        ============================== */
+
+        .routes {
+            background-color: #f5f5f5;
+        }
+
+        .route-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .route-box {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .route-box h3 {
+            color: #8b1731;
+            margin-bottom: 15px;
+        }
+
+        .route-box ul {
+            padding-left: 20px;
+        }
+
+        .route-box li {
+            margin-bottom: 10px;
+        }
+
+
+        /* ==============================
+           STUDENT TRAVEL TIPS
+        ============================== */
+
+        .tips {
+            background-color: white;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .tip {
+            text-align: center;
+            padding: 25px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .tip h3 {
+            color: #8b1731;
+            margin-bottom: 8px;
+        }
+
+        .tip p {
+            color: #666;
+            font-size: 14px;
+        }
+
+
+        /* ==============================
+           QUICK LINKS
+        ============================== */
+
+        .quick-links {
+            background-color: #f5f5f5;
+        }
+
+        .quick-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .quick-card {
+            background-color: #8b1731;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .quick-card:hover {
+            background-color: #651124;
+            transform: translateY(-4px);
+        }
+
+
+        /* ==============================
+           CALL TO ACTION
+        ============================== */
+
+        .cta {
+            background-color: #8b1731;
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .cta p {
+            margin-bottom: 20px;
+        }
+
+        .cta a {
+            display: inline-block;
+            background-color: white;
+            color: #8b1731;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .cta a:hover {
+            background-color: #eee;
+        }
+
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+
+        /* ==============================
+           RESPONSIVE DESIGN
+        ============================== */
+
+        @media (max-width: 1000px) {
+
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tips-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .quick-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
+        @media (max-width: 700px) {
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .university-name h1 {
+                font-size: 25px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul li a {
+                padding: 10px;
+            }
+
+            .hero {
+                height: 300px;
+            }
+
+            .hero-content h2 {
+                font-size: 34px;
+            }
+
+            .hero-content p {
+                font-size: 16px;
+            }
+
+            .service-grid,
+            .facility-grid,
+            .route-content,
+            .tips-grid,
+            .quick-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 40px 0;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ==============================
+         TOP BAR
+    ============================== -->
+
+    <div class="topbar">
+        Vignan University | Campus Life & Student Services
+    </div>
+
+
+    <!-- ==============================
+         HEADER
+    ============================== -->
+
+    <header>
+        <div class="container header-content">
+
+            <div class="logo">
+                VU
+            </div>
+
+            <div class="university-name">
+                <h1>VIGNAN UNIVERSITY</h1>
+                <p>Campus Life & Student Services</p>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- ==============================
+         NAVIGATION
+    ============================== -->
+
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="index.html#about">ABOUT</a></li>
+            <li><a href="index.html#campus-life">CAMPUS LIFE</a></li>
+            <li><a href="index.html#services">SERVICES</a></li>
+            <li><a href="index.html#events">EVENTS</a></li>
+            <li><a href="index.html#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- ==============================
+         HERO
+    ============================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h2>Campus Transportation</h2>
+
+            <p>
+                Safe, Convenient and Reliable Travel for Students
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         INTRODUCTION
+    ============================== -->
+
+    <section class="intro">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Transportation at Vignan University
+            </h2>
+
+            <p class="intro-text">
+                Vignan University provides transportation facilities to
+                support the daily travel needs of students and staff.
+                University transportation helps students travel safely
+                between the campus, designated pickup points and nearby
+                locations.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         TRANSPORTATION SERVICES
+    ============================== -->
+
+    <section class="services">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Transportation Services
+            </h2>
+
+            <p class="section-description">
+                Transportation facilities designed to make campus travel
+                easier and more convenient.
+            </p>
+
+
+            <div class="service-grid">
+
+                <div class="service-card">
+                    <div class="service-icon">🚌</div>
+
+                    <h3>Campus Bus Service</h3>
+
+                    <p>
+                        University buses provide convenient transportation
+                        for students travelling to and from the campus.
+                    </p>
+                </div>
+
+
+                <div class="service-card">
+                    <div class="service-icon">📍</div>
+
+                    <h3>Student Routes</h3>
+
+                    <p>
+                        Designated routes and pickup locations help students
+                        reach the university conveniently.
+                    </p>
+                </div>
+
+
+                <div class="service-card">
+                    <div class="service-icon">🚍</div>
+
+                    <h3>Campus Travel</h3>
+
+                    <p>
+                        Transportation support is available for different
+                        student activities within and around the campus.
+                    </p>
+                </div>
+
+
+                <div class="service-card">
+                    <div class="service-icon">🎓</div>
+
+                    <h3>Event Transportation</h3>
+
+                    <p>
+                        Transportation arrangements can support university
+                        events, activities and student programs.
+                    </p>
+                </div>
+
+
+                <div class="service-card">
+                    <div class="service-icon">🔄</div>
+
+                    <h3>Shuttle Facilities</h3>
+
+                    <p>
+                        Shuttle facilities help students travel between
+                        important campus locations when required.
+                    </p>
+                </div>
+
+
+                <div class="service-card">
+                    <div class="service-icon">☎️</div>
+
+                    <h3>Travel Support</h3>
+
+                    <p>
+                        Students can contact the appropriate university
+                        office for transportation-related assistance.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         TRANSPORTATION FACILITIES
+    ============================== -->
+
+    <section class="facilities">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Transportation Facilities
+            </h2>
+
+            <p class="section-description">
+                Important features of the university transportation system.
+            </p>
+
+
+            <div class="facility-grid">
+
+                <div class="facility-box">
+
+                    <h3>🚌 University Buses</h3>
+
+                    <p>
+                        University buses are available to provide students
+                        with a convenient and organized transportation
+                        facility.
+                    </p>
+
+                </div>
+
+
+                <div class="facility-box">
+
+                    <h3>📍 Pickup Points</h3>
+
+                    <p>
+                        Students should use the designated pickup points
+                        provided for university transportation services.
+                    </p>
+
+                </div>
+
+
+                <div class="facility-box">
+
+                    <h3>⏰ Transportation Timings</h3>
+
+                    <p>
+                        Students should check the applicable transportation
+                        schedule and arrive at the pickup point on time.
+                    </p>
+
+                </div>
+
+
+                <div class="facility-box">
+
+                    <h3>🛡️ Safety</h3>
+
+                    <p>
+                        Students are expected to follow transportation
+                        rules and safety instructions while using university
+                        vehicles.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         ROUTES AND SAFETY
+    ============================== -->
+
+    <section class="routes">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Routes & Safety
+            </h2>
+
+            <p class="section-description">
+                Follow the transportation guidelines to make your journey
+                safe and comfortable.
+            </p>
+
+
+            <div class="route-content">
+
+                <div class="route-box">
+
+                    <h3>📍 Route Information</h3>
+
+                    <ul>
+                        <li>Check the correct bus route before travelling.</li>
+                        <li>Use the designated pickup and drop-off points.</li>
+                        <li>Arrive at the pickup location before departure.</li>
+                        <li>Follow instructions given by transportation staff.</li>
+                        <li>Check updated schedules when necessary.</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="route-box">
+
+                    <h3>🛡️ Travel Safety</h3>
+
+                    <ul>
+                        <li>Follow all university transportation rules.</li>
+                        <li>Remain seated while the vehicle is moving.</li>
+                        <li>Do not disturb the driver.</li>
+                        <li>Keep personal belongings secure.</li>
+                        <li>Maintain cleanliness inside the vehicle.</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         STUDENT TRAVEL TIPS
+    ============================== -->
+
+    <section class="tips">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Student Travel Tips
+            </h2>
+
+            <p class="section-description">
+                Simple practices for a safe and comfortable transportation
+                experience.
+            </p>
+
+
+            <div class="tips-grid">
+
+                <div class="tip">
+
+                    <h3>⏰ Be On Time</h3>
+
+                    <p>
+                        Reach your pickup point early so you do not miss
+                        your scheduled transportation.
+                    </p>
+
+                </div>
+
+
+                <div class="tip">
+
+                    <h3>🎒 Secure Belongings</h3>
+
+                    <p>
+                        Keep your bags, books, mobile phones and other
+                        personal belongings safe.
+                    </p>
+
+                </div>
+
+
+                <div class="tip">
+
+                    <h3>🛡️ Travel Safely</h3>
+
+                    <p>
+                        Follow safety instructions and behave responsibly
+                        while travelling.
+                    </p>
+
+                </div>
+
+
+                <div class="tip">
+
+                    <h3>❓ Ask for Help</h3>
+
+                    <p>
+                        Contact the concerned university staff if you have
+                        any transportation-related problem.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         QUICK LINKS
+    ============================== -->
+
+    <section class="quick-links">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Explore Campus Life
+            </h2>
+
+
+            <div class="quick-grid">
+
+                <a href="hostels.html" class="quick-card">
+                    🏠<br>
+                    Hostels
+                </a>
+
+                <a href="sports.html" class="quick-card">
+                    ⚽<br>
+                    Sports
+                </a>
+
+                <a href="clubs.html" class="quick-card">
+                    🎭<br>
+                    Clubs
+                </a>
+
+                <a href="library.html" class="quick-card">
+                    📚<br>
+                    Library
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         CALL TO ACTION
+    ============================== -->
+
+    <section class="cta">
+
+        <div class="container">
+
+            <h2>
+                Travel Safely. Travel Smart.
+            </h2>
+
+            <p>
+                Make use of the university transportation facilities
+                responsibly and follow all safety guidelines.
+            </p>
+
+            <a href="index.html#campus-life">
+                Back to Campus Life
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         FOOTER
+    ============================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+                © 2026 Vignan University
+            </p>
+
+            <p>
+                Campus Life & Student Services
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
+```

@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vignan University | Campus Life Portal</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        /* =====================================
+           RESET
+        ===================================== */
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+a
+        body{
+            font-family:
+            Arial,
+            Helvetica,
+            sans-serif;
+
+            color:#333;
+            background:#fff;
+
+            line-height:1.6;
+        }
+
+        a{
+            text-decoration:none;
+        }
+
+        img{
+            width:100%;
+            display:block;
+        }
+
+        .container{
+            width:90%;
+            max-width:1200px;
+            margin:auto;
+        }
+
+
+        /* =====================================
+           TOP BAR
+        ===================================== */
+
+        .topbar{
+            background:#8b1731;
+            color:#fff;
+            font-size:13px;
+        }
+
+        .topbar-inner{
+            min-height:38px;
+
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        .top-links{
+            display:flex;
+            gap:20px;
+        }
+
+        .top-links a{
+            color:#fff;
+        }
+
+
+        /* =====================================
+           MAIN HEADER
+        ===================================== */
+
+        .main-header{
+            background:#fff;
+            border-bottom:1px solid #e5e5e5;
+        }
+
+        .header-inner{
+            min-height:100px;
+
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+        }
+
+        .university-brand{
+            display:flex;
+            align-items:center;
+            gap:18px;
+        }
+
+        .university-logo{
+            width:75px;
+            height:75px;
+
+            border-radius:50%;
+
+            background:#8b1731;
+            color:#fff;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            font-size:25px;
+            font-weight:bold;
+
+            border:5px solid #e8cfcf;
+        }
+
+        .brand-text h1{
+            color:#8b1731;
+            font-size:25px;
+            font-weight:700;
+        }
+
+        .brand-text p{
+            color:#777;
+            font-size:13px;
+        }
+
+        .header-contact{
+            display:flex;
+            gap:30px;
+            align-items:center;
+        }
+
+        .contact-item{
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
+
+        .contact-icon{
+            color:#8b1731;
+            font-size:22px;
+        }
+
+        .contact-item small{
+            display:block;
+            color:#888;
+            font-size:11px;
+        }
+
+        .contact-item strong{
+            color:#444;
+            font-size:13px;
+        }
+
+
+        /* =====================================
+           NAVIGATION
+        ===================================== */
+
+        .navigation{
+            background:#333;
+        }
+
+        .nav-inner{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+
+        .navigation a{
+            color:#fff;
+            padding:16px 22px;
+            font-size:14px;
+            border-right:1px solid rgba(255,255,255,.08);
+            transition:.3s;
+        }
+
+        .navigation a:hover,
+        .navigation a.active{
+            background:#8b1731;
+        }
+
+
+        /* =====================================
+           HERO
+        ===================================== */
+
+        .hero{
+            height:530px;
+            position:relative;
+
+            background:
+            url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=2000&q=90");
+
+            background-size:cover;
+            background-position:center;
+        }
+
+        .hero-overlay{
+            position:absolute;
+            inset:0;
+
+            background:
+            linear-gradient(
+                90deg,
+                rgba(0,0,0,.72),
+                rgba(0,0,0,.15)
+            );
+        }
+
+        .hero-content{
+            position:relative;
+            z-index:2;
+
+            height:100%;
+
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+
+            max-width:650px;
+
+            color:#fff;
+        }
+
+        .hero-content small{
+            color:#f1c7c7;
+            font-size:14px;
+            letter-spacing:2px;
+            margin-bottom:15px;
+        }
+
+        .hero-content h2{
+            font-size:52px;
+            line-height:1.1;
+            margin-bottom:18px;
+        }
+
+        .hero-content h2 span{
+            color:#f2b4b4;
+        }
+
+        .hero-content p{
+            font-size:17px;
+            color:#eee;
+            max-width:600px;
+        }
+
+        .hero-buttons{
+            margin-top:28px;
+        }
+
+        .primary-btn{
+            display:inline-block;
+
+            background:#8b1731;
+            color:#fff;
+
+            padding:13px 25px;
+
+            font-size:14px;
+            font-weight:bold;
+
+            margin-right:10px;
+
+            border-radius:3px;
+        }
+
+        .secondary-btn{
+            display:inline-block;
+
+            background:#fff;
+            color:#8b1731;
+
+            padding:12px 25px;
+
+            font-size:14px;
+            font-weight:bold;
+
+            border-radius:3px;
+        }
+
+
+        /* =====================================
+           WELCOME
+        ===================================== */
+
+        .section{
+            padding:75px 0;
+        }
+
+        .section-heading{
+            text-align:center;
+            margin-bottom:45px;
+        }
+
+        .section-heading h2{
+            color:#8b1731;
+            font-size:32px;
+            margin-bottom:10px;
+        }
+
+        .section-heading p{
+            color:#777;
+            max-width:700px;
+            margin:auto;
+            font-size:15px;
+        }
+
+        .heading-line{
+            width:55px;
+            height:3px;
+            background:#8b1731;
+            margin:15px auto;
+        }
+
+        .welcome-grid{
+            display:grid;
+            grid-template-columns:1.1fr .9fr;
+            gap:50px;
+            align-items:center;
+        }
+
+        .welcome-image{
+            height:330px;
+            overflow:hidden;
+        }
+
+        .welcome-image img{
+            height:100%;
+            object-fit:cover;
+        }
+
+        .welcome-content h3{
+            color:#444;
+            font-size:26px;
+            margin-bottom:18px;
+        }
+
+        .welcome-content p{
+            color:#666;
+            font-size:15px;
+            margin-bottom:15px;
+        }
+
+        .read-more{
+            display:inline-block;
+            color:#8b1731;
+            font-weight:bold;
+            font-size:14px;
+            margin-top:10px;
+        }
+
+
+        /* =====================================
+           CAMPUS LIFE
+        ===================================== */
+
+        .campus-section{
+            background:#f6f6f6;
+        }
+
+        .campus-grid{
+            display:grid;
+            grid-template-columns:
+            repeat(3,1fr);
+            gap:25px;
+        }
+
+        .campus-card{
+            background:#fff;
+            border:1px solid #e3e3e3;
+            transition:.3s;
+        }
+
+        .campus-card:hover{
+            transform:translateY(-5px);
+            box-shadow:0 8px 25px rgba(0,0,0,.1);
+        }
+
+        .campus-image{
+            height:190px;
+            overflow:hidden;
+        }
+
+        .campus-image img{
+            height:100%;
+            object-fit:cover;
+            transition:.4s;
+        }
+
+        .campus-card:hover img{
+            transform:scale(1.05);
+        }
+
+        .campus-content{
+            padding:22px;
+        }
+
+        .campus-content h3{
+            color:#8b1731;
+            font-size:20px;
+            margin-bottom:9px;
+        }
+
+        .campus-content p{
+            color:#777;
+            font-size:14px;
+            margin-bottom:12px;
+        }
+
+        .campus-link{
+            color:#8b1731;
+            font-weight:bold;
+            font-size:13px;
+        }
+
+
+        /* =====================================
+           QUICK LINKS
+        ===================================== */
+
+        .quick-grid{
+            display:grid;
+            grid-template-columns:
+            repeat(6,1fr);
+
+            border:1px solid #ddd;
+        }
+
+        .quick-item{
+            text-align:center;
+            padding:25px 10px;
+
+            border-right:1px solid #ddd;
+
+            transition:.3s;
+        }
+
+        .quick-item:last-child{
+            border-right:none;
+        }
+
+        .quick-item:hover{
+            background:#8b1731;
+            color:#fff;
+        }
+
+        .quick-icon{
+            font-size:32px;
+            margin-bottom:10px;
+        }
+
+        .quick-item h3{
+            font-size:14px;
+            font-weight:600;
+        }
+
+
+        /* =====================================
+           NEWS & EVENTS
+        ===================================== */
+
+        .news-section{
+            background:#f7f7f7;
+        }
+
+        .news-grid{
+            display:grid;
+            grid-template-columns:
+            1.5fr 1fr 1fr;
+
+            gap:25px;
+        }
+
+        .news-card{
+            background:#fff;
+            border:1px solid #ddd;
+        }
+
+        .news-image{
+            height:190px;
+            overflow:hidden;
+        }
+
+        .news-image img{
+            height:100%;
+            object-fit:cover;
+        }
+
+        .news-content{
+            padding:22px;
+        }
+
+        .news-date{
+            color:#8b1731;
+            font-size:12px;
+            font-weight:bold;
+        }
+
+        .news-content h3{
+            margin:10px 0;
+            color:#444;
+            font-size:19px;
+        }
+
+        .news-content p{
+            color:#777;
+            font-size:14px;
+        }
+
+
+        /* =====================================
+           CAMPUS HIGHLIGHTS
+        ===================================== */
+
+        .highlight-grid{
+            display:grid;
+            grid-template-columns:
+            repeat(4,1fr);
+            gap:20px;
+        }
+
+        .highlight{
+            text-align:center;
+            padding:30px 15px;
+
+            border:1px solid #ddd;
+        }
+
+        .highlight strong{
+            display:block;
+            font-size:35px;
+            color:#8b1731;
+        }
+
+        .highlight span{
+            color:#777;
+            font-size:13px;
+        }
+
+
+        /* =====================================
+           CTA
+        ===================================== */
+
+        .cta{
+            background:#8b1731;
+            color:#fff;
+            text-align:center;
+            padding:55px 0;
+        }
+
+        .cta h2{
+            font-size:30px;
+            margin-bottom:10px;
+        }
+
+        .cta p{
+            color:#f1d9dd;
+            margin-bottom:25px;
+        }
+
+        .cta .secondary-btn{
+            color:#8b1731;
+        }
+
+
+        /* =====================================
+           FOOTER
+        ===================================== */
+
+        footer{
+            background:#292929;
+            color:#ddd;
+        }
+
+        .footer-grid{
+            padding:55px 0;
+
+            display:grid;
+
+            grid-template-columns:
+            2fr 1fr 1fr 1.2fr;
+
+            gap:40px;
+        }
+
+        .footer-brand h3{
+            color:#fff;
+            font-size:22px;
+            margin-bottom:12px;
+        }
+
+        .footer-brand p{
+            color:#aaa;
+            font-size:14px;
+        }
+
+        .footer-column h3{
+            color:#fff;
+            font-size:16px;
+            margin-bottom:18px;
+        }
+
+        .footer-column a{
+            display:block;
+            color:#aaa;
+            font-size:13px;
+            margin:8px 0;
+        }
+
+        .footer-column a:hover{
+            color:#fff;
+        }
+
+        .footer-column p{
+            color:#aaa;
+            font-size:13px;
+            margin:7px 0;
+        }
+
+        .copyright{
+            border-top:1px solid #444;
+            text-align:center;
+            padding:18px;
+            color:#888;
+            font-size:12px;
+        }
+
+
+        /* =====================================
+           MOBILE
+        ===================================== */
+
+        @media(max-width:1000px){
+
+            .header-contact{
+                display:none;
+            }
+
+            .campus-grid{
+                grid-template-columns:
+                repeat(2,1fr);
+            }
+
+            .quick-grid{
+                grid-template-columns:
+                repeat(3,1fr);
+            }
+
+            .quick-item:nth-child(3){
+                border-right:none;
+            }
+
+            .news-grid{
+                grid-template-columns:1fr 1fr;
+            }
+
+            .news-card:first-child{
+                grid-column:1/-1;
+            }
+
+            .highlight-grid{
+                grid-template-columns:
+                repeat(2,1fr);
+            }
+
+            .footer-grid{
+                grid-template-columns:
+                repeat(2,1fr);
+            }
+        }
+
+
+        @media(max-width:700px){
+
+            .top-links{
+                display:none;
+            }
+
+            .topbar-inner{
+                justify-content:center;
+            }
+
+            .header-inner{
+                justify-content:center;
+            }
+
+            .navigation{
+                overflow-x:auto;
+            }
+
+            .nav-inner{
+                justify-content:flex-start;
+                width:max-content;
+            }
+
+            .navigation a{
+                padding:13px 15px;
+                white-space:nowrap;
+            }
+
+            .hero{
+                height:550px;
+            }
+
+            .hero-content h2{
+                font-size:38px;
+            }
+
+            .hero-content p{
+                font-size:15px;
+            }
+
+            .welcome-grid,
+            .campus-grid,
+            .news-grid{
+                grid-template-columns:1fr;
+            }
+
+            .quick-grid{
+                grid-template-columns:
+                repeat(2,1fr);
+            }
+
+            .quick-item{
+                border-bottom:1px solid #ddd;
+            }
+
+            .quick-item:nth-child(2n){
+                border-right:none;
+            }
+
+            .highlight-grid{
+                grid-template-columns:1fr 1fr;
+            }
+
+            .footer-grid{
+                grid-template-columns:1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================
+     TOP BAR
+========================================== -->
+
+<div class="topbar">
+
+    <div class="container topbar-inner">
+
+        <div>
+            University Campus Life Portal
+        </div>
+
+        <div class="top-links">
+
+            <a href="#notice">
+                Notices
+            </a>
+
+            <a href="#events">
+                Events
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ==========================================
+     HEADER
+========================================== -->
+
+<header class="main-header">
+
+    <div class="container header-inner">
+
+        <a href="index.html"
+           class="university-brand">
+
+            <div class="university-logo">
+                VU
+            </div>
+
+            <div class="brand-text">
+
+                <h1>
+                    VIGNAN UNIVERSITY
+                </h1>
+
+                <p>
+                    Campus Life & Student Portal
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <div class="header-contact">
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    ☎
+                </div>
+
+                <div>
+
+                    <small>
+                        Student Support
+                    </small>
+
+                    <strong>
+                        Campus Help Desk
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    ✉
+                </div>
+
+                <div>
+
+                    <small>
+                        Email
+                    </small>
+
+                    <strong>
+                        student@university.edu
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ==========================================
+     NAVIGATION
+========================================== -->
+
+<nav class="navigation">
+
+    <div class="container nav-inner">
+
+        <a href="index.html"
+           class="active">
+            HOME
+        </a>
+
+        <a href="#about">
+            ABOUT
+        </a>
+
+        <a href="#campus-life">
+            CAMPUS LIFE
+        </a>
+
+        <a href="#services">
+            SERVICES
+        </a>
+
+        <a href="#events">
+            EVENTS
+        </a>
+
+        <a href="#contact">
+            CONTACT
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- ==========================================
+     HERO
+========================================== -->
+
+<section class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+
+        <small>
+            WELCOME TO VIGNAN UNIVERSITY
+        </small>
+
+        <h2>
+            Discover Your<br>
+            <span>Campus Life</span>
+        </h2>
+
+        <p>
+            Explore student accommodation, sports,
+            clubs, library services, transportation
+            and the many facilities that make university
+            life memorable.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#campus-life"
+               class="primary-btn">
+                Explore Campus
+            </a>
+
+            <a href="#events"
+               class="secondary-btn">
+                View Events
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     WELCOME
+========================================== -->
+
+<section id="about"
+         class="section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>
+                Welcome to Campus Life
+            </h2>
+
+            <div class="heading-line"></div>
+
+            <p>
+                Discover the people, places, activities
+                and services that create the complete
+                university experience.
+            </p>
+
+        </div>
+
+
+        <div class="welcome-grid">
+
+
+            <div class="welcome-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1000&q=85"
+                alt="University Campus">
+
+            </div>
+
+
+            <div class="welcome-content">
+
+                <h3>
+                    A Campus Built Around Students
+                </h3>
+
+                <p>
+                    University life is an important part of
+                    every student's journey. Beyond academic
+                    learning, students experience new friendships,
+                    activities, competitions, cultural programmes
+                    and opportunities to discover their interests.
+                </p>
+
+                <p>
+                    This campus life portal brings important
+                    student information together so that students
+                    can easily discover facilities, activities
+                    and services available on campus.
+                </p>
+
+                <a href="#campus-life"
+                   class="read-more">
+                    Explore Campus Life →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     CAMPUS LIFE
+========================================== -->
+
+<section id="campus-life"
+         class="section campus-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>
+                Campus Life
+            </h2>
+
+            <div class="heading-line"></div>
+
+            <p>
+                Explore the key areas of student life
+                through the links below.
+            </p>
+
+        </div>
+
+
+        <div class="campus-grid">
+
+
+            <!-- HOSTELS -->
+
+            <div class="campus-card">
+
+                <div class="campus-image">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=900&q=85"
+                    alt="University Hostel">
+
+                </div>
+
+                <div class="campus-content">
+
+                    <h3>
+                        Hostels
+                    </h3>
+
+                    <p>
+                        Learn about student accommodation,
+                        residential life, dining and
+                        hostel facilities.
+                    </p>
+
+                    <a href="hostels.html"
+                       class="campus-link">
+                        View Hostel Information →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- SPORTS -->
+
+            <div class="campus-card">
+
+                <div class="campus-image">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=900&q=85"
+                    alt="University Sports">
+
+                </div>
+
+                <div class="campus-content">
+
+                    <h3>
+                        Sports
+                    </h3>
+
+                    <p>
+                        Discover sports activities,
+                        recreation and opportunities
+                        for students.
+                    </p>
+
+                    <a href="sports.html"
+                       class="campus-link">
+                        View Sports Information →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- CLUBS -->
+
+            <div class="campus-card">
+
+                <div class="campus-image">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=85"
+                    alt="Student Clubs">
+
+                </div>
+
+                <div class="campus-content">
+
+                    <h3>
+                        Student Clubs
+                    </h3>
+
+                    <p>
+                        Join technical, cultural,
+                        creative, literary and
+                        social communities.
+                    </p>
+
+                    <a href="clubs.html"
+                       class="campus-link">
+                        Explore Student Clubs →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- LIBRARY -->
+
+            <div class="campus-card">
+
+                <div class="campus-image">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=900&q=85"
+                    alt="University Library">
+
+                </div>
+
+                <div class="campus-content">
+
+                    <h3>
+                        Library
+                    </h3>
+
+                    <p>
+                        Explore learning resources,
+                        study areas and academic
+                        support services.
+                    </p>
+
+                    <a href="library.html"
+                       class="campus-link">
+                        Visit Library Page →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- TRANSPORT -->
+
+            <div class="campus-card">
+
+                <div class="campus-image">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=900&q=85"
+                    alt="University Transportation">
+
+                </div>
+
+                <div class="campus-content">
+
+                    <h3>
+                        Transportation
+                    </h3>
+
+                    <p>
+                        Find information about campus
+                        transportation, routes and
+                        travel safety.
+                    </p>
+
+                    <a href="transportation.html"
+                       class="campus-link">
+                        View Transport Information →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- FACILITIES -->
+
+            <div class="campus-card">
+
+                <div class="campus-image">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85"
+                    alt="Campus Facilities">
+
+                </div>
+
+                <div class="campus-content">
+
+                    <h3>
+                        Campus Facilities
+                    </h3>
+
+                    <p>
+                        Explore laboratories, health
+                        services, dining, internet and
+                        other campus facilities.
+                    </p>
+
+                    <a href="facilities.html"
+                       class="campus-link">
+                        View Campus Facilities →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     QUICK ACCESS
+========================================== -->
+
+<section id="services"
+         class="section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>
+                Quick Access
+            </h2>
+
+            <div class="heading-line"></div>
+
+        </div>
+
+
+        <div class="quick-grid">
+
+
+            <a href="hostels.html"
+               class="quick-item">
+
+                <div class="quick-icon">
+                    🏠
+                </div>
+
+                <h3>
+                    Hostels
+                </h3>
+
+            </a>
+
+
+            <a href="sports.html"
+               class="quick-item">
+
+                <div class="quick-icon">
+                    🏆
+                </div>
+
+                <h3>
+                    Sports
+                </h3>
+
+            </a>
+
+
+            <a href="clubs.html"
+               class="quick-item">
+
+                <div class="quick-icon">
+                    🎭
+                </div>
+
+                <h3>
+                    Clubs
+                </h3>
+
+            </a>
+
+
+            <a href="library.html"
+               class="quick-item">
+
+                <div class="quick-icon">
+                    📚
+                </div>
+
+                <h3>
+                    Library
+                </h3>
+
+            </a>
+
+
+            <a href="transportation.html"
+               class="quick-item">
+
+                <div class="quick-icon">
+                    🚌
+                </div>
+
+                <h3>
+                    Transport
+                </h3>
+
+            </a>
+
+
+            <a href="facilities.html"
+               class="quick-item">
+
+                <div class="quick-icon">
+                    🏫
+                </div>
+
+                <h3>
+                    Facilities
+                </h3>
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     NEWS & EVENTS
+========================================== -->
+
+<section id="events"
+         class="section news-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>
+                News & Events
+            </h2>
+
+            <div class="heading-line"></div>
+
+            <p>
+                Stay connected with activities,
+                programmes and student events.
+            </p>
+
+        </div>
+
+
+        <div class="news-grid">
+
+
+            <article class="news-card">
+
+                <div class="news-image">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1000&q=85"
+                    alt="Campus Event">
+
+                </div>
+
+                <div class="news-content">
+
+                    <span class="news-date">
+                        CAMPUS EVENT
+                    </span>
+
+                    <h3>
+                        Cultural & Student Activities
+                    </h3>
+
+                    <p>
+                        Explore cultural programmes,
+                        student performances and activities
+                        happening across the campus.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="news-card">
+
+                <div class="news-image">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=85"
+                    alt="Technology Event">
+
+                </div>
+
+                <div class="news-content">
+
+                    <span class="news-date">
+                        TECHNOLOGY
+                    </span>
+
+                    <h3>
+                        Innovation & Technology
+                    </h3>
+
+                    <p>
+                        Discover technical activities,
+                        projects, workshops and student
+                        innovation opportunities.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="news-card">
+
+                <div class="news-image">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=900&q=85"
+                    alt="Sports Event">
+
+                </div>
+
+                <div class="news-content">
+
+                    <span class="news-date">
+                        SPORTS
+                    </span>
+
+                    <h3>
+                        Sports & Competitions
+                    </h3>
+
+                    <p>
+                        Follow sporting activities,
+                        competitions and opportunities
+                        for student participation.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     CAMPUS HIGHLIGHTS
+========================================== -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>
+                Campus Highlights
+            </h2>
+
+            <div class="heading-line"></div>
+
+        </div>
+
+
+        <div class="highlight-grid">
+
+
+            <div class="highlight">
+
+                <strong>
+                    01
+                </strong>
+
+                <span>
+                    Student Community
+                </span>
+
+            </div>
+
+
+            <div class="highlight">
+
+                <strong>
+                    02
+                </strong>
+
+                <span>
+                    Learning Resources
+                </span>
+
+            </div>
+
+
+            <div class="highlight">
+
+                <strong>
+                    03
+                </strong>
+
+                <span>
+                    Sports & Activities
+                </span>
+
+            </div>
+
+
+            <div class="highlight">
+
+                <strong>
+                    04
+                </strong>
+
+                <span>
+                    Campus Services
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     CTA
+========================================== -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <h2>
+            Discover Your University Experience
+        </h2>
+
+        <p>
+            Explore the campus, connect with the community
+            and make the most of student life.
+        </p>
+
+        <a href="#campus-life"
+           class="secondary-btn">
+            Explore Campus Life
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer id="contact">
+
+    <div class="container footer-grid">
+
+
+        <div class="footer-brand">
+
+            <h3>
+                VIGNAN UNIVERSITY
+            </h3>
+
+            <p>
+                Campus Life & Student Portal
+            </p>
+
+            <br>
+
+            <p>
+                A digital portal designed to help
+                students discover and experience
+                campus life.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Campus Life
+            </h3>
+
+            <a href="hostels.html">
+                Hostels
+            </a>
+
+            <a href="sports.html">
+                Sports
+            </a>
+
+            <a href="clubs.html">
+                Student Clubs
+            </a>
+
+            <a href="library.html">
+                Library
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Services
+            </h3>
+
+            <a href="transportation.html">
+                Transportation
+            </a>
+
+            <a href="facilities.html">
+                Campus Facilities
+            </a>
+
+            <a href="#events">
+                Events
+            </a>
+
+            <a href="#about">
+                About Campus
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Contact
+            </h3>
+
+            <p>
+                📍 University Campus
+            </p>
+
+            <p>
+                Andhra Pradesh, India
+            </p>
+
+            <p>
+                ☎ Student Support Centre
+            </p>
+
+            <p>
+                ✉ student@university.edu
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Vignan University Campus Life Portal.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>
+:::

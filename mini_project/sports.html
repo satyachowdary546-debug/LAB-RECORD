@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sports | Vignan University Campus Life</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background: #fff;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* TOP BAR */
+
+        .topbar {
+            background: #8b1731;
+            color: white;
+            font-size: 13px;
+        }
+
+        .topbar-inner {
+            min-height: 38px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .top-links a {
+            color: white;
+        }
+
+        /* HEADER */
+
+        .main-header {
+            background: white;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .header-inner {
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .logo {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: #8b1731;
+            border: 5px solid #ead1d5;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .brand h1 {
+            color: #8b1731;
+            font-size: 25px;
+        }
+
+        .brand p {
+            color: #777;
+            font-size: 13px;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            background: #333;
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            padding: 16px 23px;
+            font-size: 14px;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: #8b1731;
+        }
+
+        /* PAGE HERO */
+
+        .page-hero {
+            height: 360px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,.62),
+                    rgba(0,0,0,.55)
+                ),
+                url("https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1800&q=90");
+
+            background-size: cover;
+            background-position: center;
+            
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            color: white;
+        }
+
+        .hero-content span {
+            color: #f2c1c8;
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+
+        .hero-content h2 {
+            font-size: 48px;
+            margin: 12px 0;
+        }
+
+        .hero-content p {
+            max-width: 650px;
+            color: #eee;
+            font-size: 16px;
+        }
+
+        /* BREADCRUMB */
+
+        .breadcrumb {
+            background: #f5f5f5;
+            border-bottom: 1px solid #ddd;
+            padding: 14px 0;
+            font-size: 13px;
+            color: #777;
+        }
+
+        .breadcrumb a {
+            color: #8b1731;
+        }
+
+        /* SECTIONS */
+
+        .section {
+            padding: 70px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            color: #8b1731;
+            font-size: 31px;
+        }
+
+        .line {
+            width: 55px;
+            height: 3px;
+            background: #8b1731;
+            margin: 14px auto;
+        }
+
+        .section-title p {
+            color: #777;
+            max-width: 700px;
+            margin: auto;
+            font-size: 14px;
+        }
+
+        /* INTRO */
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .intro-image {
+            height: 350px;
+            overflow: hidden;
+        }
+
+        .intro-image img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .intro-content h2 {
+            color: #444;
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+
+        .intro-content p {
+            color: #666;
+            margin-bottom: 14px;
+            font-size: 15px;
+        }
+
+        /* SPORTS CARDS */
+
+        .grey-section {
+            background: #f7f7f7;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #ddd;
+        }
+
+        .card-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 22px;
+        }
+
+        .card-content h3 {
+            color: #8b1731;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .card-content p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* FACILITIES */
+
+        .facility-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .facility {
+            border: 1px solid #ddd;
+            padding: 25px;
+            background: #fff;
+        }
+
+        .facility-icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .facility h3 {
+            color: #444;
+            margin-bottom: 7px;
+            font-size: 17px;
+        }
+
+        .facility p {
+            color: #777;
+            font-size: 13px;
+        }
+
+        /* SPORTS TABLE */
+
+        .sports-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .sports-table th {
+            background: #8b1731;
+            color: white;
+            text-align: left;
+            padding: 15px;
+            font-size: 14px;
+        }
+
+        .sports-table td {
+            padding: 14px 15px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .sports-table tr:nth-child(even) {
+            background: #f8f8f8;
+        }
+
+        /* GUIDELINES */
+
+        .rules-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+        }
+
+        .rules-box {
+            border-left: 4px solid #8b1731;
+            background: #f7f7f7;
+            padding: 25px;
+        }
+
+        .rules-box h3 {
+            color: #8b1731;
+            margin-bottom: 15px;
+        }
+
+        .rules-box ul {
+            padding-left: 20px;
+        }
+
+        .rules-box li {
+            color: #666;
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        /* TIMINGS */
+
+        .timing-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .timing {
+            text-align: center;
+            border: 1px solid #ddd;
+            padding: 25px 15px;
+        }
+
+        .timing h3 {
+            color: #8b1731;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .timing p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* CTA */
+
+        .contact-section {
+            background: #8b1731;
+            color: white;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .contact-section p {
+            color: #f1dadd;
+            margin-bottom: 25px;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background: white;
+            color: #8b1731;
+            padding: 12px 25px;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #292929;
+            color: #ddd;
+        }
+
+        .footer-grid {
+            padding: 50px 0;
+
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.2fr;
+            gap: 40px;
+        }
+
+        .footer-grid h3 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 17px;
+        }
+
+        .footer-grid p,
+        .footer-grid a {
+            color: #aaa;
+            font-size: 13px;
+            display: block;
+            margin: 7px 0;
+        }
+
+        .footer-grid a:hover {
+            color: white;
+        }
+
+        .copyright {
+            border-top: 1px solid #444;
+            text-align: center;
+            padding: 17px;
+            color: #888;
+            font-size: 12px;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width: 900px) {
+
+            .intro-grid,
+            .rules-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .facility-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .timing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width: 650px) {
+
+            .header-inner {
+                justify-content: center;
+            }
+
+            .top-links {
+                display: none;
+            }
+
+            .nav-inner {
+                overflow-x: auto;
+                justify-content: flex-start;
+                width: max-content;
+            }
+
+            nav a {
+                white-space: nowrap;
+                padding: 13px 16px;
+            }
+
+            .page-hero {
+                height: 330px;
+            }
+
+            .hero-content h2 {
+                font-size: 37px;
+            }
+
+            .cards,
+            .facility-grid,
+            .timing-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sports-table {
+                font-size: 12px;
+            }
+
+            .sports-table th,
+            .sports-table td {
+                padding: 9px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+
+    <div class="container topbar-inner">
+
+        <span>
+            University Campus Life Portal
+        </span>
+
+        <div class="top-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- HEADER -->
+
+<header class="main-header">
+
+    <div class="container header-inner">
+
+        <a href="index.html" class="brand">
+
+            <div class="logo">
+                VU
+            </div>
+
+            <div>
+
+                <h1>
+                    VIGNAN UNIVERSITY
+                </h1>
+
+                <p>
+                    Campus Life & Student Portal
+                </p>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="container nav-inner">
+
+        <a href="index.html">
+            HOME
+        </a>
+
+        <a href="hostels.html">
+            HOSTELS
+        </a>
+
+        <a href="sports.html" class="active">
+            SPORTS
+        </a>
+
+        <a href="clubs.html">
+            CLUBS
+        </a>
+
+        <a href="library.html">
+            LIBRARY
+        </a>
+
+        <a href="transportation.html">
+            TRANSPORT
+        </a>
+
+        <a href="facilities.html">
+            FACILITIES
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="page-hero">
+
+    <div class="container hero-content">
+
+        <span>
+            SPORTS & RECREATION
+        </span>
+
+        <h2>
+            Sports & Fitness
+        </h2>
+
+        <p>
+            Stay active, develop teamwork and discover
+            your potential through sports, fitness and
+            recreational activities on campus.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- BREADCRUMB -->
+
+<div class="breadcrumb">
+
+    <div class="container">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        &nbsp; / &nbsp;
+
+        Sports
+
+    </div>
+
+</div>
+
+
+<!-- INTRODUCTION -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="intro-grid">
+
+            <div class="intro-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1000&q=85"
+                alt="University Sports">
+
+            </div>
+
+
+            <div class="intro-content">
+
+                <h2>
+                    An Active Campus Community
+                </h2>
+
+                <p>
+                    Sports are an important part of student
+                    life. They provide opportunities to stay
+                    healthy, build confidence and develop
+                    teamwork and leadership skills.
+                </p>
+
+                <p>
+                    Students can participate in individual
+                    and team sports, recreational activities,
+                    fitness programmes and campus competitions.
+                </p>
+
+                <p>
+                    Whether you are an experienced athlete or
+                    simply looking for an enjoyable way to stay
+                    active, campus sports provide opportunities
+                    for students with different interests and
+                    abilities.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SPORTS CATEGORIES -->
+
+<section class="section grey-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Sports Activities
+            </h2>
+
+            <div class="line"></div>
+
+            <p>
+                Students can take part in a variety of
+                sporting and recreational activities.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <!-- CRICKET -->
+
+            <div class="card">
+
+                <div class="card-image">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=900&q=85"
+                    alt="Cricket">
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>
+                        Cricket
+                    </h3>
+
+                    <p>
+                        A popular team sport offering students
+                        opportunities for practice, friendly
+                        matches and competitions.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOTBALL -->
+
+            <div class="card">
+
+                <div class="card-image">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=900&q=85"
+                    alt="Football">
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>
+                        Football
+                    </h3>
+
+                    <p>
+                        Students can participate in football
+                        training, recreational games and
+                        inter-class or campus competitions.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- BASKETBALL -->
+
+            <div class="card">
+
+                <div class="card-image">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=900&q=85"
+                    alt="Basketball">
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>
+                        Basketball
+                    </h3>
+
+                    <p>
+                        Basketball activities provide students
+                        with opportunities to develop fitness,
+                        coordination and teamwork.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- BADMINTON -->
+
+            <div class="card">
+
+                <div class="card-image">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=900&q=85"
+                    alt="Badminton">
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>
+                        Badminton
+                    </h3>
+
+                    <p>
+                        Indoor badminton activities are suitable
+                        for recreational play, training and
+                        student competitions.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ATHLETICS -->
+
+            <div class="card">
+
+                <div class="card-image">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=900&q=85"
+                    alt="Athletics">
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>
+                        Athletics
+                    </h3>
+
+                    <p>
+                        Running and athletics activities help
+                        students improve endurance, speed
+                        and overall physical fitness.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- TABLE TENNIS -->
+
+            <div class="card">
+
+                <div class="card-image">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1534158914592-062992fbe900?auto=format&fit=crop&w=900&q=85"
+                    alt="Table Tennis">
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>
+                        Table Tennis
+                    </h3>
+
+                    <p>
+                        Table tennis provides an indoor
+                        recreational and competitive activity
+                        for students.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SPORTS FACILITIES -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Sports Facilities
+            </h2>
+
+            <div class="line"></div>
+
+            <p>
+                Campus sports facilities support training,
+                recreation and student competitions.
+            </p>
+
+        </div>
+
+
+        <div class="facility-grid">
+
+
+            <div class="facility">
+
+                <div class="facility-icon">
+                    🏟️
+                </div>
+
+                <h3>
+                    Outdoor Grounds
+                </h3>
+
+                <p>
+                    Open sports grounds provide space for
+                    outdoor games, training and competitions.
+                </p>
+
+            </div>
+
+
+            <div class="facility">
+
+                <div class="facility-icon">
+                    🏀
+                </div>
+
+                <h3>
+                    Basketball Court
+                </h3>
+
+                <p>
+                    A dedicated court for basketball practice,
+                    recreational games and competitions.
+                </p>
+
+            </div>
+
+
+            <div class="facility">
+
+                <div class="facility-icon">
+                    🏸
+                </div>
+
+                <h3>
+                    Indoor Games
+                </h3>
+
+                <p>
+                    Indoor facilities support badminton,
+                    table tennis and other recreational games.
+                </p>
+
+            </div>
+
+
+            <div class="facility">
+
+                <div class="facility-icon">
+                    🏃
+                </div>
+
+                <h3>
+                    Running & Fitness
+                </h3>
+
+                <p>
+                    Students can use designated areas for
+                    running, exercise and fitness activities.
+                </p>
+
+            </div>
+
+
+            <div class="facility">
+
+                <div class="facility-icon">
+                    🏋️
+                </div>
+
+                <h3>
+                    Fitness Activities
+                </h3>
+
+                <p>
+                    Fitness activities encourage students
+                    to maintain an active and healthy lifestyle.
+                </p>
+
+            </div>
+
+
+            <div class="facility">
+
+                <div class="facility-icon">
+                    🩹
+                </div>
+
+                <h3>
+                    First Aid Support
+                </h3>
+
+                <p>
+                    Appropriate first-aid support should be
+                    available for sports-related incidents.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SPORTS TABLE -->
+
+<section class="section grey-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Sports & Activities
+            </h2>
+
+            <div class="line"></div>
+
+            <p>
+                Example categories of activities available
+                through campus recreation.
+            </p>
+
+        </div>
+
+
+        <table class="sports-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Activity
+                    </th>
+
+                    <th>
+                        Category
+                    </th>
+
+                    <th>
+                        Type
+                    </th>
+
+                    <th>
+                        Student Participation
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <tr>
+
+                    <td>
+                        Cricket
+                    </td>
+
+                    <td>
+                        Outdoor
+                    </td>
+
+                    <td>
+                        Team Sport
+                    </td>
+
+                    <td>
+                        Practice & Competitions
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Football
+                    </td>
+
+                    <td>
+                        Outdoor
+                    </td>
+
+                    <td>
+                        Team Sport
+                    </td>
+
+                    <td>
+                        Practice & Competitions
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Basketball
+                    </td>
+
+                    <td>
+                        Outdoor
+                    </td>
+
+                    <td>
+                        Team Sport
+                    </td>
+
+                    <td>
+                        Practice & Competitions
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Badminton
+                    </td>
+
+                    <td>
+                        Indoor
+                    </td>
+
+                    <td>
+                        Individual / Doubles
+                    </td>
+
+                    <td>
+                        Recreation & Competitions
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Athletics
+                    </td>
+
+                    <td>
+                        Outdoor
+                    </td>
+
+                    <td>
+                        Individual
+                    </td>
+
+                    <td>
+                        Training & Competitions
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Table Tennis
+                    </td>
+
+                    <td>
+                        Indoor
+                    </td>
+
+                    <td>
+                        Individual / Doubles
+                    </td>
+
+                    <td>
+                        Recreation & Competitions
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- STUDENT PARTICIPATION -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Student Participation
+            </h2>
+
+            <div class="line"></div>
+
+            <p>
+                Sports provide students with opportunities
+                to participate at different levels.
+            </p>
+
+        </div>
+
+
+        <div class="rules-grid">
+
+
+            <div class="rules-box">
+
+                <h3>
+                    Getting Started
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Choose a sport or recreational activity
+                        that interests you.
+                    </li>
+
+                    <li>
+                        Check available practice sessions
+                        and facility schedules.
+                    </li>
+
+                    <li>
+                        Participate in training and
+                        recreational activities.
+                    </li>
+
+                    <li>
+                        Join student sports groups and
+                        competitions.
+                    </li>
+
+                    <li>
+                        Follow the instructions of coaches
+                        and sports coordinators.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="rules-box">
+
+                <h3>
+                    Sportsmanship
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Respect teammates, opponents and
+                        officials.
+                    </li>
+
+                    <li>
+                        Follow sports facility rules.
+                    </li>
+
+                    <li>
+                        Use sports equipment responsibly.
+                    </li>
+
+                    <li>
+                        Maintain appropriate sports attire
+                        and safety practices.
+                    </li>
+
+                    <li>
+                        Promote teamwork, discipline and
+                        fair play.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SPORTS TIMINGS -->
+
+<section class="section grey-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Sports Schedule
+            </h2>
+
+            <div class="line"></div>
+
+        </div>
+
+
+        <div class="timing-grid">
+
+
+            <div class="timing">
+
+                <h3>
+                    Morning
+                </h3>
+
+                <p>
+                    Fitness and outdoor
+                    recreational activities.
+                </p>
+
+            </div>
+
+
+            <div class="timing">
+
+                <h3>
+                    Afternoon
+                </h3>
+
+                <p>
+                    Selected indoor and
+                    recreational activities.
+                </p>
+
+            </div>
+
+
+            <div class="timing">
+
+                <h3>
+                    Evening
+                </h3>
+
+                <p>
+                    Team sports, outdoor
+                    games and practice.
+                </p>
+
+            </div>
+
+
+            <div class="timing">
+
+                <h3>
+                    Weekends
+                </h3>
+
+                <p>
+                    Recreational games,
+                    competitions and activities.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section id="contact" class="section contact-section">
+
+    <div class="container">
+
+        <h2>
+            Get Active. Get Involved.
+        </h2>
+
+        <p>
+            Discover sports, develop your skills and
+            become part of the campus sports community.
+        </p>
+
+        <a href="index.html" class="contact-btn">
+            Back to Campus Portal
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container footer-grid">
+
+
+        <div>
+
+            <h3>
+                VIGNAN UNIVERSITY
+            </h3>
+
+            <p>
+                Campus Life & Student Portal
+            </p>
+
+            <p>
+                Explore student accommodation,
+                activities and campus facilities.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Campus Life
+            </h3>
+
+            <a href="hostels.html">
+                Hostels
+            </a>
+
+            <a href="sports.html">
+                Sports
+            </a>
+
+            <a href="clubs.html">
+                Clubs
+            </a>
+
+            <a href="library.html">
+                Library
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Services
+            </h3>
+
+            <a href="transportation.html">
+                Transportation
+            </a>
+
+            <a href="facilities.html">
+                Facilities
+            </a>
+
+            <a href="index.html">
+                Home
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Student Support
+            </h3>
+
+            <p>
+                Sports Administration
+            </p>
+
+            <p>
+                Campus Recreation
+            </p>
+
+            <p>
+                Student Support Centre
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Vignan University Campus Life Portal.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
+:::

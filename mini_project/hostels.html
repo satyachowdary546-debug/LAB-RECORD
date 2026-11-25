@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hostels | Vignan University Campus Life</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background: #fff;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* TOP BAR */
+
+        .topbar {
+            background: #8b1731;
+            color: white;
+            font-size: 13px;
+        }
+
+        .topbar-inner {
+            min-height: 38px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .top-links a {
+            color: white;
+        }
+
+        /* HEADER */
+
+        .main-header {
+            background: white;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .header-inner {
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .logo {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: #8b1731;
+            border: 5px solid #ead1d5;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .brand h1 {
+            color: #8b1731;
+            font-size: 25px;
+        }
+
+        .brand p {
+            color: #777;
+            font-size: 13px;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            background: #333;
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            padding: 16px 23px;
+            font-size: 14px;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: #8b1731;
+        }
+
+        /* PAGE HERO */
+
+        .page-hero {
+            height: 360px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,.62),
+                    rgba(0,0,0,.55)
+                ),
+                url("https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=1800&q=90");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            color: white;
+        }
+
+        .hero-content span {
+            color: #f2c1c8;
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+
+        .hero-content h2 {
+            font-size: 48px;
+            margin: 12px 0;
+        }
+
+        .hero-content p {
+            max-width: 650px;
+            color: #eee;
+            font-size: 16px;
+        }
+
+        /* BREADCRUMB */
+
+        .breadcrumb {
+            background: #f5f5f5;
+            border-bottom: 1px solid #ddd;
+            padding: 14px 0;
+            font-size: 13px;
+            color: #777;
+        }
+
+        .breadcrumb a {
+            color: #8b1731;
+        }
+
+        /* SECTIONS */
+
+        .section {
+            padding: 70px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            color: #8b1731;
+            font-size: 31px;
+        }
+
+        .line {
+            width: 55px;
+            height: 3px;
+            background: #8b1731;
+            margin: 14px auto;
+        }
+
+        .section-title p {
+            color: #777;
+            max-width: 700px;
+            margin: auto;
+            font-size: 14px;
+        }
+
+        /* INTRO */
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .intro-image {
+            height: 350px;
+            overflow: hidden;
+        }
+
+        .intro-image img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .intro-content h2 {
+            color: #444;
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+
+        .intro-content p {
+            color: #666;
+            margin-bottom: 14px;
+            font-size: 15px;
+        }
+
+        /* HOSTEL CARDS */
+
+        .grey-section {
+            background: #f7f7f7;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #ddd;
+        }
+
+        .card-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 22px;
+        }
+
+        .card-content h3 {
+            color: #8b1731;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .card-content p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* FACILITIES */
+
+        .facility-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .facility {
+            border: 1px solid #ddd;
+            padding: 25px;
+            background: #fff;
+        }
+
+        .facility-icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .facility h3 {
+            color: #444;
+            margin-bottom: 7px;
+            font-size: 17px;
+        }
+
+        .facility p {
+            color: #777;
+            font-size: 13px;
+        }
+
+        /* ROOM TYPES */
+
+        .room-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .room-table th {
+            background: #8b1731;
+            color: white;
+            text-align: left;
+            padding: 15px;
+            font-size: 14px;
+        }
+
+        .room-table td {
+            padding: 14px 15px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .room-table tr:nth-child(even) {
+            background: #f8f8f8;
+        }
+
+        /* RULES */
+
+        .rules-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+        }
+
+        .rules-box {
+            border-left: 4px solid #8b1731;
+            background: #f7f7f7;
+            padding: 25px;
+        }
+
+        .rules-box h3 {
+            color: #8b1731;
+            margin-bottom: 15px;
+        }
+
+        .rules-box ul {
+            padding-left: 20px;
+        }
+
+        .rules-box li {
+            color: #666;
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        /* TIMINGS */
+
+        .timing-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .timing {
+            text-align: center;
+            border: 1px solid #ddd;
+            padding: 25px 15px;
+        }
+
+        .timing h3 {
+            color: #8b1731;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .timing p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* CONTACT */
+
+        .contact-section {
+            background: #8b1731;
+            color: white;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .contact-section p {
+            color: #f1dadd;
+            margin-bottom: 25px;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background: white;
+            color: #8b1731;
+            padding: 12px 25px;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #292929;
+            color: #ddd;
+        }
+
+        .footer-grid {
+            padding: 50px 0;
+
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.2fr;
+            gap: 40px;
+        }
+
+        .footer-grid h3 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 17px;
+        }
+
+        .footer-grid p,
+        .footer-grid a {
+            color: #aaa;
+            font-size: 13px;
+            display: block;
+            margin: 7px 0;
+        }
+
+        .footer-grid a:hover {
+            color: white;
+        }
+
+        .copyright {
+            border-top: 1px solid #444;
+            text-align: center;
+            padding: 17px;
+            color: #888;
+            font-size: 12px;
+        }
+
+        /* MOBILE */
+
+        @media(max-width: 900px) {
+
+            .intro-grid,
+            .rules-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .facility-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .timing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width: 650px) {
+
+            .header-inner {
+                justify-content: center;
+            }
+
+            .top-links {
+                display: none;
+            }
+
+            .nav-inner {
+                overflow-x: auto;
+                justify-content: flex-start;
+                width: max-content;
+            }
+
+            nav a {
+                white-space: nowrap;
+                padding: 13px 16px;
+            }
+
+            .page-hero {
+                height: 330px;
+            }
+
+            .hero-content h2 {
+                font-size: 37px;
+            }
+
+            .cards,
+            .facility-grid,
+            .timing-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .room-table {
+                font-size: 12px;
+            }
+
+            .room-table th,
+            .room-table td {
+                padding: 9px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+
+    <div class="container topbar-inner">
+
+        <span>
+            University Campus Life Portal
+        </span>
+
+        <div class="top-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- HEADER -->
+
+<header class="main-header">
+
+    <div class="container header-inner">
+
+        <a href="index.html" class="brand">
+
+            <div class="logo">
+                VU
+            </div>
+
+            <div>
+                <h1>
+                    VIGNAN UNIVERSITY
+                </h1>
+
+                <p>
+                    Campus Life & Student Portal
+                </p>
+            </div>
+
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="container nav-inner">
+
+        <a href="index.html">
+            HOME
+        </a>
+
+        <a href="hostels.html" class="active">
+            HOSTELS
+        </a>
+
+        <a href="sports.html">
+            SPORTS
+        </a>
+
+        <a href="clubs.html">
+            CLUBS
+        </a>
+
+        <a href="library.html">
+            LIBRARY
+        </a>
+
+        <a href="transportation.html">
+            TRANSPORT
+        </a>
+
+        <a href="facilities.html">
+            FACILITIES
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- PAGE HERO -->
+
+<section class="page-hero">
+
+    <div class="container hero-content">
+
+        <span>
+            CAMPUS RESIDENTIAL LIFE
+        </span>
+
+        <h2>
+            University Hostels
+        </h2>
+
+        <p>
+            A comfortable, secure and supportive residential
+            environment where students can live, learn,
+            connect and create lasting memories.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- BREADCRUMB -->
+
+<div class="breadcrumb">
+
+    <div class="container">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        &nbsp; / &nbsp;
+
+        Hostels
+
+    </div>
+
+</div>
+
+
+<!-- INTRODUCTION -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="intro-grid">
+
+            <div class="intro-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=1000&q=85"
+                alt="Student Hostel">
+
+            </div>
+
+
+            <div class="intro-content">
+
+                <h2>
+                    Comfortable Campus Living
+                </h2>
+
+                <p>
+                    University hostel life provides students
+                    with an opportunity to live close to their
+                    academic environment while becoming part
+                    of a vibrant student community.
+                </p>
+
+                <p>
+                    The residential facilities are designed to
+                    provide students with accommodation,
+                    dining, study spaces, recreational areas
+                    and essential support services.
+                </p>
+
+                <p>
+                    Students are encouraged to maintain a
+                    respectful and friendly environment while
+                    participating in academic, cultural and
+                    recreational activities.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- HOSTEL TYPES -->
+
+<section class="section grey-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Hostel Accommodation
+            </h2>
+
+            <div class="line"></div>
+
+            <p>
+                Residential accommodation is organized to
+                provide students with a safe and comfortable
+                living environment.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <div class="card-image">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=900&q=85"
+                    alt="Student Rooms">
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>
+                        Student Rooms
+                    </h3>
+
+                    <p>
+                        Comfortable rooms with essential
+                        furniture and facilities for everyday
+                        student living and study.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-image">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1560185008-b033106af5c3?auto=format&fit=crop&w=900&q=85"
+                    alt="Hostel Common Area">
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>
+                        Common Areas
+                    </h3>
+
+                    <p>
+                        Shared spaces where students can
+                        relax, interact with friends and
+                        participate in residential activities.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-image">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=900&q=85"
+                    alt="Hostel Dining">
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>
+                        Dining & Mess
+                    </h3>
+
+                    <p>
+                        Residential dining facilities provide
+                        students with regular meals and
+                        comfortable dining spaces.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FACILITIES -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Hostel Facilities
+            </h2>
+
+            <div class="line"></div>
+
+            <p>
+                Essential facilities are provided to support
+                students throughout their residential life.
+            </p>
+
+        </div>
+
+
+        <div class="facility-grid">
+
+
+            <div class="facility">
+
+                <div class="facility-icon">
+                    🛏️
+                </div>
+
+                <h3>
+                    Furnished Rooms
+                </h3>
+
+                <p>
+                    Student rooms are equipped with essential
+                    furniture for comfortable living and study.
+                </p>
+
+            </div>
+
+
+            <div class="facility">
+
+                <div class="facility-icon">
+                    📶
+                </div>
+
+                <h3>
+                    Internet Connectivity
+                </h3>
+
+                <p>
+                    Internet access helps students with academic
+                    work, communication and online learning.
+                </p>
+
+            </div>
+
+
+            <div class="facility">
+
+                <div class="facility-icon">
+                    🍽️
+                </div>
+
+                <h3>
+                    Dining Facilities
+                </h3>
+
+                <p>
+                    Dining and mess facilities are available
+                    for residential students.
+                </p>
+
+            </div>
+
+
+            <div class="facility">
+
+                <div class="facility-icon">
+                    🛡️
+                </div>
+
+                <h3>
+                    Security
+                </h3>
+
+                <p>
+                    Residential areas follow campus safety
+                    and security procedures.
+                </p>
+
+            </div>
+
+
+            <div class="facility">
+
+                <div class="facility-icon">
+                    🧺
+                </div>
+
+                <h3>
+                    Laundry Services
+                </h3>
+
+                <p>
+                    Laundry arrangements help students manage
+                    their everyday residential needs.
+                </p>
+
+            </div>
+
+
+            <div class="facility">
+
+                <div class="facility-icon">
+                    🏥
+                </div>
+
+                <h3>
+                    Health Support
+                </h3>
+
+                <p>
+                    Students can access campus health and
+                    emergency support services when required.
+                </p>
+
+            </div>
+
+
+            <div class="facility">
+
+                <div class="facility-icon">
+                    📚
+                </div>
+
+                <h3>
+                    Study Spaces
+                </h3>
+
+                <p>
+                    Dedicated areas provide students with
+                    quiet spaces for reading and academic work.
+                </p>
+
+            </div>
+
+
+            <div class="facility">
+
+                <div class="facility-icon">
+                    🏸
+                </div>
+
+                <h3>
+                    Recreation
+                </h3>
+
+                <p>
+                    Students can participate in recreational
+                    activities during their free time.
+                </p>
+
+            </div>
+
+
+            <div class="facility">
+
+                <div class="facility-icon">
+                    👨‍💼
+                </div>
+
+                <h3>
+                    Residential Support
+                </h3>
+
+                <p>
+                    Hostel administration and residential staff
+                    assist students with hostel-related concerns.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ROOM INFORMATION -->
+
+<section class="section grey-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Room Information
+            </h2>
+
+            <div class="line"></div>
+
+            <p>
+                Example accommodation categories for the
+                campus residential system.
+            </p>
+
+        </div>
+
+
+        <table class="room-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Accommodation
+                    </th>
+
+                    <th>
+                        Occupancy
+                    </th>
+
+                    <th>
+                        Suitable For
+                    </th>
+
+                    <th>
+                        Basic Facilities
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <tr>
+
+                    <td>
+                        Single Room
+                    </td>
+
+                    <td>
+                        1 Student
+                    </td>
+
+                    <td>
+                        Individual Accommodation
+                    </td>
+
+                    <td>
+                        Bed, Study Table, Storage
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Double Sharing
+                    </td>
+
+                    <td>
+                        2 Students
+                    </td>
+
+                    <td>
+                        Shared Accommodation
+                    </td>
+
+                    <td>
+                        Beds, Study Tables, Storage
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Triple Sharing
+                    </td>
+
+                    <td>
+                        3 Students
+                    </td>
+
+                    <td>
+                        Shared Accommodation
+                    </td>
+
+                    <td>
+                        Beds, Study Tables, Storage
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Common Hostel Rooms
+                    </td>
+
+                    <td>
+                        Multiple Students
+                    </td>
+
+                    <td>
+                        Residential Community
+                    </td>
+
+                    <td>
+                        Shared Residential Facilities
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- HOSTEL RULES -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Hostel Guidelines
+            </h2>
+
+            <div class="line"></div>
+
+            <p>
+                Students are expected to follow residential
+                rules to maintain a safe and respectful campus.
+            </p>
+
+        </div>
+
+
+        <div class="rules-grid">
+
+
+            <div class="rules-box">
+
+                <h3>
+                    General Rules
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Maintain cleanliness in rooms and
+                        common areas.
+                    </li>
+
+                    <li>
+                        Respect fellow residents and
+                        hostel staff.
+                    </li>
+
+                    <li>
+                        Take care of hostel property and
+                        shared facilities.
+                    </li>
+
+                    <li>
+                        Follow university residential
+                        policies.
+                    </li>
+
+                    <li>
+                        Report maintenance or safety
+                        concerns to hostel administration.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="rules-box">
+
+                <h3>
+                    Student Responsibilities
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Carry the required student
+                        identification.
+                    </li>
+
+                    <li>
+                        Follow designated entry and exit
+                        procedures.
+                    </li>
+
+                    <li>
+                        Maintain a peaceful study
+                        environment.
+                    </li>
+
+                    <li>
+                        Follow dining and common-area
+                        guidelines.
+                    </li>
+
+                    <li>
+                        Cooperate with hostel authorities
+                        during emergencies.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TIMINGS -->
+
+<section class="section grey-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Residential Schedule
+            </h2>
+
+            <div class="line"></div>
+
+        </div>
+
+
+        <div class="timing-grid">
+
+
+            <div class="timing">
+
+                <h3>
+                    Dining
+                </h3>
+
+                <p>
+                    Breakfast<br>
+                    Lunch<br>
+                    Dinner
+                </p>
+
+            </div>
+
+
+            <div class="timing">
+
+                <h3>
+                    Study Hours
+                </h3>
+
+                <p>
+                    Quiet environment
+                    during designated
+                    study periods.
+                </p>
+
+            </div>
+
+
+            <div class="timing">
+
+                <h3>
+                    Recreation
+                </h3>
+
+                <p>
+                    Recreation areas
+                    available during
+                    designated hours.
+                </p>
+
+            </div>
+
+
+            <div class="timing">
+
+                <h3>
+                    Help Desk
+                </h3>
+
+                <p>
+                    Hostel administration
+                    support available
+                    for students.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="section contact-section">
+
+    <div class="container">
+
+        <h2>
+            Need Hostel Assistance?
+        </h2>
+
+        <p>
+            Contact the hostel administration or student
+            support centre for residential assistance.
+        </p>
+
+        <a href="index.html" class="contact-btn">
+            Back to Campus Portal
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container footer-grid">
+
+
+        <div>
+
+            <h3>
+                VIGNAN UNIVERSITY
+            </h3>
+
+            <p>
+                Campus Life & Student Portal
+            </p>
+
+            <p>
+                Explore student accommodation,
+                activities and campus facilities.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Campus Life
+            </h3>
+
+            <a href="hostels.html">
+                Hostels
+            </a>
+
+            <a href="sports.html">
+                Sports
+            </a>
+
+            <a href="clubs.html">
+                Clubs
+            </a>
+
+            <a href="library.html">
+                Library
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Services
+            </h3>
+
+            <a href="transportation.html">
+                Transportation
+            </a>
+
+            <a href="facilities.html">
+                Facilities
+            </a>
+
+            <a href="index.html">
+                Home
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Student Support
+            </h3>
+
+            <p>
+                Hostel Administration
+            </p>
+
+            <p>
+                Campus Help Desk
+            </p>
+
+            <p>
+                Student Support Centre
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Vignan University Campus Life Portal.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
+:::

@@ -1,0 +1,1469 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vignan University | Library</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+            color:#333;
+            background:#fff;
+            line-height:1.6;
+        }
+
+        a{
+            text-decoration:none;
+        }
+
+        img{
+            width:100%;
+            display:block;
+        }
+
+        .container{
+            width:90%;
+            max-width:1200px;
+            margin:auto;
+        }
+
+
+        /* =====================================
+           TOP BAR
+        ===================================== */
+
+        .topbar{
+            background:#8b1731;
+            color:#fff;
+            font-size:13px;
+        }
+
+        .topbar-inner{
+            min-height:38px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        .top-links{
+            display:flex;
+            gap:20px;
+        }
+
+        .top-links a{
+            color:#fff;
+        }
+
+
+        /* =====================================
+           HEADER
+        ===================================== */
+
+        .main-header{
+            background:#fff;
+            border-bottom:1px solid #e5e5e5;
+        }
+
+        .header-inner{
+            min-height:100px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+        }
+
+        .university-brand{
+            display:flex;
+            align-items:center;
+            gap:18px;
+        }
+
+        .university-logo{
+            width:75px;
+            height:75px;
+            border-radius:50%;
+            background:#8b1731;
+            color:#fff;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:25px;
+            font-weight:bold;
+            border:5px solid #e8cfcf;
+        }
+
+        .brand-text h1{
+            color:#8b1731;
+            font-size:25px;
+        }
+
+        .brand-text p{
+            color:#777;
+            font-size:13px;
+        }
+
+        .header-contact{
+            display:flex;
+            gap:30px;
+            align-items:center;
+        }
+
+        .contact-item{
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
+
+        .contact-icon{
+            color:#8b1731;
+            font-size:22px;
+        }
+
+        .contact-item small{
+            display:block;
+            color:#888;
+            font-size:11px;
+        }
+
+        .contact-item strong{
+            color:#444;
+            font-size:13px;
+        }
+
+
+        /* =====================================
+           NAVIGATION
+        ===================================== */
+
+        .navigation{
+            background:#333;
+        }
+
+        .nav-inner{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+
+        .navigation a{
+            color:#fff;
+            padding:16px 22px;
+            font-size:14px;
+            border-right:1px solid rgba(255,255,255,.08);
+            transition:.3s;
+        }
+
+        .navigation a:hover,
+        .navigation a.active{
+            background:#8b1731;
+        }
+
+
+        /* =====================================
+           HERO
+        ===================================== */
+
+        .page-hero{
+            height:390px;
+            position:relative;
+
+            background:
+            url("https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=2000&q=90");
+
+            background-size:cover;
+            background-position:center;
+        }
+
+        .page-hero::before{
+            content:"";
+            position:absolute;
+            inset:0;
+
+            background:
+            linear-gradient(
+                90deg,
+                rgba(0,0,0,.75),
+                rgba(0,0,0,.20)
+            );
+        }
+
+        .page-hero-content{
+            position:relative;
+            z-index:2;
+
+            height:100%;
+
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+
+            color:#fff;
+            max-width:700px;
+        }
+
+        .page-hero-content small{
+            color:#f1c7c7;
+            font-size:14px;
+            letter-spacing:2px;
+            margin-bottom:12px;
+        }
+
+        .page-hero-content h2{
+            font-size:50px;
+            line-height:1.1;
+            margin-bottom:18px;
+        }
+
+        .page-hero-content h2 span{
+            color:#f2b4b4;
+        }
+
+        .page-hero-content p{
+            font-size:17px;
+            color:#eee;
+            max-width:650px;
+        }
+
+
+        /* =====================================
+           SECTION
+        ===================================== */
+
+        .section{
+            padding:75px 0;
+        }
+
+        .section-heading{
+            text-align:center;
+            margin-bottom:45px;
+        }
+
+        .section-heading h2{
+            color:#8b1731;
+            font-size:32px;
+            margin-bottom:10px;
+        }
+
+        .section-heading p{
+            color:#777;
+            max-width:750px;
+            margin:auto;
+            font-size:15px;
+        }
+
+        .heading-line{
+            width:55px;
+            height:3px;
+            background:#8b1731;
+            margin:15px auto;
+        }
+
+
+        /* =====================================
+           INTRO
+        ===================================== */
+
+        .intro-grid{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:50px;
+            align-items:center;
+        }
+
+        .intro-image{
+            height:350px;
+            overflow:hidden;
+        }
+
+        .intro-image img{
+            height:100%;
+            object-fit:cover;
+        }
+
+        .intro-content h3{
+            color:#444;
+            font-size:27px;
+            margin-bottom:18px;
+        }
+
+        .intro-content p{
+            color:#666;
+            font-size:15px;
+            margin-bottom:15px;
+        }
+
+
+        /* =====================================
+           LIBRARY SERVICES
+        ===================================== */
+
+        .services-section{
+            background:#f6f6f6;
+        }
+
+        .service-grid{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:25px;
+        }
+
+        .service-card{
+            background:#fff;
+            border:1px solid #ddd;
+            transition:.3s;
+        }
+
+        .service-card:hover{
+            transform:translateY(-6px);
+            box-shadow:0 8px 25px rgba(0,0,0,.12);
+        }
+
+        .service-image{
+            height:180px;
+            overflow:hidden;
+        }
+
+        .service-image img{
+            height:100%;
+            object-fit:cover;
+            transition:.4s;
+        }
+
+        .service-card:hover .service-image img{
+            transform:scale(1.05);
+        }
+
+        .service-content{
+            padding:22px;
+        }
+
+        .service-icon{
+            font-size:32px;
+            margin-bottom:10px;
+        }
+
+        .service-content h3{
+            color:#8b1731;
+            font-size:20px;
+            margin-bottom:10px;
+        }
+
+        .service-content p{
+            color:#777;
+            font-size:14px;
+        }
+
+
+        /* =====================================
+           LIBRARY FACILITIES
+        ===================================== */
+
+        .facility-grid{
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            gap:20px;
+        }
+
+        .facility{
+            border:1px solid #ddd;
+            text-align:center;
+            padding:30px 18px;
+            transition:.3s;
+        }
+
+        .facility:hover{
+            background:#8b1731;
+            color:#fff;
+        }
+
+        .facility-icon{
+            font-size:35px;
+            margin-bottom:12px;
+        }
+
+        .facility h3{
+            color:#8b1731;
+            font-size:18px;
+            margin-bottom:8px;
+        }
+
+        .facility:hover h3{
+            color:#fff;
+        }
+
+        .facility p{
+            color:#777;
+            font-size:13px;
+        }
+
+        .facility:hover p{
+            color:#f1d9dd;
+        }
+
+
+        /* =====================================
+           LIBRARY RULES
+        ===================================== */
+
+        .rules-section{
+            background:#f7f7f7;
+        }
+
+        .rules-grid{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:25px;
+        }
+
+        .rule-card{
+            background:#fff;
+            border-left:4px solid #8b1731;
+            padding:25px;
+            border-top:1px solid #ddd;
+            border-right:1px solid #ddd;
+            border-bottom:1px solid #ddd;
+        }
+
+        .rule-card h3{
+            color:#8b1731;
+            margin-bottom:10px;
+        }
+
+        .rule-card p{
+            color:#777;
+            font-size:14px;
+        }
+
+
+        /* =====================================
+           CTA
+        ===================================== */
+
+        .cta{
+            background:#8b1731;
+            color:#fff;
+            text-align:center;
+            padding:55px 0;
+        }
+
+        .cta h2{
+            font-size:30px;
+            margin-bottom:10px;
+        }
+
+        .cta p{
+            color:#f1d9dd;
+            margin-bottom:25px;
+        }
+
+        .secondary-btn{
+            display:inline-block;
+            background:#fff;
+            color:#8b1731;
+            padding:12px 25px;
+            font-size:14px;
+            font-weight:bold;
+            border-radius:3px;
+        }
+
+
+        /* =====================================
+           FOOTER
+        ===================================== */
+
+        footer{
+            background:#292929;
+            color:#ddd;
+        }
+
+        .footer-grid{
+            padding:55px 0;
+
+            display:grid;
+
+            grid-template-columns:
+            2fr 1fr 1fr 1.2fr;
+
+            gap:40px;
+        }
+
+        .footer-brand h3{
+            color:#fff;
+            font-size:22px;
+            margin-bottom:12px;
+        }
+
+        .footer-brand p{
+            color:#aaa;
+            font-size:14px;
+        }
+
+        .footer-column h3{
+            color:#fff;
+            font-size:16px;
+            margin-bottom:18px;
+        }
+
+        .footer-column a{
+            display:block;
+            color:#aaa;
+            font-size:13px;
+            margin:8px 0;
+        }
+
+        .footer-column a:hover{
+            color:#fff;
+        }
+
+        .footer-column p{
+            color:#aaa;
+            font-size:13px;
+            margin:7px 0;
+        }
+
+        .copyright{
+            border-top:1px solid #444;
+            text-align:center;
+            padding:18px;
+            color:#888;
+            font-size:12px;
+        }
+
+
+        /* =====================================
+           MOBILE
+        ===================================== */
+
+        @media(max-width:1000px){
+
+            .header-contact{
+                display:none;
+            }
+
+            .service-grid{
+                grid-template-columns:repeat(2,1fr);
+            }
+
+            .facility-grid{
+                grid-template-columns:repeat(2,1fr);
+            }
+
+            .footer-grid{
+                grid-template-columns:repeat(2,1fr);
+            }
+
+        }
+
+
+        @media(max-width:700px){
+
+            .top-links{
+                display:none;
+            }
+
+            .topbar-inner{
+                justify-content:center;
+            }
+
+            .header-inner{
+                justify-content:center;
+            }
+
+            .navigation{
+                overflow-x:auto;
+            }
+
+            .nav-inner{
+                justify-content:flex-start;
+                width:max-content;
+            }
+
+            .navigation a{
+                padding:13px 15px;
+                white-space:nowrap;
+            }
+
+            .page-hero{
+                height:450px;
+            }
+
+            .page-hero-content h2{
+                font-size:38px;
+            }
+
+            .page-hero-content p{
+                font-size:15px;
+            }
+
+            .intro-grid,
+            .service-grid,
+            .rules-grid{
+                grid-template-columns:1fr;
+            }
+
+            .facility-grid{
+                grid-template-columns:1fr 1fr;
+            }
+
+            .footer-grid{
+                grid-template-columns:1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================
+     TOP BAR
+========================================== -->
+
+<div class="topbar">
+
+    <div class="container topbar-inner">
+
+        <div>
+            University Campus Life Portal
+        </div>
+
+        <div class="top-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="#library">
+                Library
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ==========================================
+     HEADER
+========================================== -->
+
+<header class="main-header">
+
+    <div class="container header-inner">
+
+        <a href="index.html" class="university-brand">
+
+            <div class="university-logo">
+                VU
+            </div>
+
+            <div class="brand-text">
+
+                <h1>
+                    VIGNAN UNIVERSITY
+                </h1>
+
+                <p>
+                    Campus Life & Student Portal
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <div class="header-contact">
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    ☎
+                </div>
+
+                <div>
+
+                    <small>
+                        Student Support
+                    </small>
+
+                    <strong>
+                        Campus Help Desk
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    ✉
+                </div>
+
+                <div>
+
+                    <small>
+                        Email
+                    </small>
+
+                    <strong>
+                        student@university.edu
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ==========================================
+     NAVIGATION
+========================================== -->
+
+<nav class="navigation">
+
+    <div class="container nav-inner">
+
+        <a href="index.html">
+            HOME
+        </a>
+
+        <a href="index.html#about">
+            ABOUT
+        </a>
+
+        <a href="index.html#campus-life" class="active">
+            CAMPUS LIFE
+        </a>
+
+        <a href="index.html#services">
+            SERVICES
+        </a>
+
+        <a href="index.html#events">
+            EVENTS
+        </a>
+
+        <a href="#contact">
+            CONTACT
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- ==========================================
+     HERO
+========================================== -->
+
+<section class="page-hero">
+
+    <div class="container page-hero-content">
+
+        <small>
+            VIGNAN UNIVERSITY CAMPUS LIFE
+        </small>
+
+        <h2>
+            University <span>Library</span>
+        </h2>
+
+        <p>
+            Discover books, digital resources, study spaces
+            and academic support services designed to help
+            students learn, research and succeed.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     INTRODUCTION
+========================================== -->
+
+<section id="library" class="section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>
+                Welcome to the Library
+            </h2>
+
+            <div class="heading-line"></div>
+
+            <p>
+                A supportive learning environment for reading,
+                research, academic preparation and independent study.
+            </p>
+
+        </div>
+
+
+        <div class="intro-grid">
+
+            <div class="intro-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1000&q=85"
+                    alt="University Library">
+
+            </div>
+
+
+            <div class="intro-content">
+
+                <h3>
+                    Learn, Research & Discover
+                </h3>
+
+                <p>
+                    The university library provides students with
+                    a quiet and comfortable environment for reading,
+                    studying and academic work.
+                </p>
+
+                <p>
+                    Students can access a wide range of learning
+                    resources, reference materials and digital
+                    information to support their academic journey.
+                </p>
+
+                <p>
+                    Whether you are preparing for examinations,
+                    working on assignments or exploring a new
+                    subject, the library offers resources to
+                    support your learning.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     LIBRARY SERVICES
+========================================== -->
+
+<section class="section services-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>
+                Library Services
+            </h2>
+
+            <div class="heading-line"></div>
+
+            <p>
+                Explore the major services and resources
+                available through the university library.
+            </p>
+
+        </div>
+
+
+        <div class="service-grid">
+
+
+            <!-- BOOKS -->
+
+            <div class="service-card">
+
+                <div class="service-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=900&q=85"
+                        alt="Library Books">
+
+                </div>
+
+                <div class="service-content">
+
+                    <div class="service-icon">
+                        📚
+                    </div>
+
+                    <h3>
+                        Books & Collections
+                    </h3>
+
+                    <p>
+                        Access books, reference materials and
+                        academic collections supporting different
+                        areas of study.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- DIGITAL RESOURCES -->
+
+            <div class="service-card">
+
+                <div class="service-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=900&q=85"
+                        alt="Digital Library">
+
+                </div>
+
+                <div class="service-content">
+
+                    <div class="service-icon">
+                        💻
+                    </div>
+
+                    <h3>
+                        Digital Resources
+                    </h3>
+
+                    <p>
+                        Explore digital learning materials and
+                        online resources to support research
+                        and academic study.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- REFERENCE -->
+
+            <div class="service-card">
+
+                <div class="service-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=900&q=85"
+                        alt="Reference Books">
+
+                </div>
+
+                <div class="service-content">
+
+                    <div class="service-icon">
+                        🔎
+                    </div>
+
+                    <h3>
+                        Reference Services
+                    </h3>
+
+                    <p>
+                        Find useful reference materials and
+                        resources for assignments, projects
+                        and academic research.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- STUDY SPACE -->
+
+            <div class="service-card">
+
+                <div class="service-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85"
+                        alt="Study Space">
+
+                </div>
+
+                <div class="service-content">
+
+                    <div class="service-icon">
+                        🪑
+                    </div>
+
+                    <h3>
+                        Study Areas
+                    </h3>
+
+                    <p>
+                        Comfortable spaces are available for
+                        individual study, reading and academic
+                        preparation.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- INTERNET -->
+
+            <div class="service-card">
+
+                <div class="service-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85"
+                        alt="Library Internet">
+
+                </div>
+
+                <div class="service-content">
+
+                    <div class="service-icon">
+                        🌐
+                    </div>
+
+                    <h3>
+                        Internet Access
+                    </h3>
+
+                    <p>
+                        Use available internet facilities to
+                        access academic information and online
+                        learning resources.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACADEMIC SUPPORT -->
+
+            <div class="service-card">
+
+                <div class="service-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=900&q=85"
+                        alt="Academic Support">
+
+                </div>
+
+                <div class="service-content">
+
+                    <div class="service-icon">
+                        🎓
+                    </div>
+
+                    <h3>
+                        Academic Support
+                    </h3>
+
+                    <p>
+                        Make use of library resources to support
+                        coursework, projects, examination
+                        preparation and research.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     LIBRARY FACILITIES
+========================================== -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>
+                Library Facilities
+            </h2>
+
+            <div class="heading-line"></div>
+
+            <p>
+                Facilities designed to make learning and
+                independent study more comfortable.
+            </p>
+
+        </div>
+
+
+        <div class="facility-grid">
+
+
+            <div class="facility">
+
+                <div class="facility-icon">
+                    📖
+                </div>
+
+                <h3>
+                    Reading Area
+                </h3>
+
+                <p>
+                    Quiet spaces for reading and focused study.
+                </p>
+
+            </div>
+
+
+            <div class="facility">
+
+                <div class="facility-icon">
+                    🖥️
+                </div>
+
+                <h3>
+                    Computer Access
+                </h3>
+
+                <p>
+                    Facilities for digital learning and research.
+                </p>
+
+            </div>
+
+
+            <div class="facility">
+
+                <div class="facility-icon">
+                    🗂️
+                </div>
+
+                <h3>
+                    Reference Section
+                </h3>
+
+                <p>
+                    Resources for academic reference and research.
+                </p>
+
+            </div>
+
+
+            <div class="facility">
+
+                <div class="facility-icon">
+                    📶
+                </div>
+
+                <h3>
+                    Internet Access
+                </h3>
+
+                <p>
+                    Connectivity for academic and digital resources.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     LIBRARY GUIDELINES
+========================================== -->
+
+<section class="section rules-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>
+                Library Guidelines
+            </h2>
+
+            <div class="heading-line"></div>
+
+            <p>
+                Help maintain a productive and comfortable
+                learning environment for everyone.
+            </p>
+
+        </div>
+
+
+        <div class="rules-grid">
+
+
+            <div class="rule-card">
+
+                <h3>
+                    Maintain Silence
+                </h3>
+
+                <p>
+                    Keep conversations and noise to a minimum
+                    so that other students can study comfortably.
+                </p>
+
+            </div>
+
+
+            <div class="rule-card">
+
+                <h3>
+                    Handle Books Carefully
+                </h3>
+
+                <p>
+                    Take care of books and library materials
+                    and return them in good condition.
+                </p>
+
+            </div>
+
+
+            <div class="rule-card">
+
+                <h3>
+                    Keep the Space Clean
+                </h3>
+
+                <p>
+                    Keep study areas clean and dispose of
+                    waste responsibly.
+                </p>
+
+            </div>
+
+
+            <div class="rule-card">
+
+                <h3>
+                    Respect Other Students
+                </h3>
+
+                <p>
+                    Be considerate of other students and
+                    maintain a focused learning atmosphere.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     CTA
+========================================== -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <h2>
+            Make the Most of Your Library
+        </h2>
+
+        <p>
+            Read, research, learn and prepare for your
+            academic journey.
+        </p>
+
+        <a href="index.html#campus-life" class="secondary-btn">
+            Back to Campus Life
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer id="contact">
+
+    <div class="container footer-grid">
+
+
+        <div class="footer-brand">
+
+            <h3>
+                VIGNAN UNIVERSITY
+            </h3>
+
+            <p>
+                Campus Life & Student Portal
+            </p>
+
+            <br>
+
+            <p>
+                A digital portal designed to help
+                students discover and experience
+                campus life.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Campus Life
+            </h3>
+
+            <a href="hostels.html">
+                Hostels
+            </a>
+
+            <a href="sports.html">
+                Sports
+            </a>
+
+            <a href="clubs.html">
+                Student Clubs
+            </a>
+
+            <a href="library.html">
+                Library
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Services
+            </h3>
+
+            <a href="transportation.html">
+                Transportation
+            </a>
+
+            <a href="facilities.html">
+                Campus Facilities
+            </a>
+
+            <a href="index.html#events">
+                Events
+            </a>
+
+            <a href="index.html#about">
+                About Campus
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Contact
+            </h3>
+
+            <p>
+                📍 University Campus
+            </p>
+
+            <p>
+                Andhra Pradesh, India
+            </p>
+
+            <p>
+                ☎ Student Support Centre
+            </p>
+
+            <p>
+                ✉ student@university.edu
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Vignan University Campus Life Portal.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>
+```
+
+Your existing `index.html` already has the correct Library link:
+
+```html
+<a href="library.html" class="campus-link">
+    Visit Library Page →
+</a>
+```
+
+and the Quick Access section also points to `library.html`, so no changes to the index are needed.
+
+Just put the new file beside your other HTML files:
+
+```text
+index.html
+hostels.html
+sports.html
+clubs.html
+library.html
+```

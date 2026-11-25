@@ -1,0 +1,1620 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Facilities | Vignan University</title>
+
+    <style>
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           TOP BAR
+        ========================= */
+
+        .topbar {
+            background-color: #8b1731;
+            color: white;
+            text-align: center;
+            padding: 8px;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background-color: white;
+            padding: 20px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+            background-color: #8b1731;
+            color: white;
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .university-name h1 {
+            color: #8b1731;
+            font-size: 30px;
+            margin-bottom: 3px;
+        }
+
+        .university-name p {
+            color: #666;
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            background-color: #333;
+        }
+
+        nav ul {
+            list-style: none;
+
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            display: block;
+
+            color: white;
+            text-decoration: none;
+
+            padding: 15px 22px;
+
+            font-size: 15px;
+        }
+
+        nav ul li a:hover {
+            background-color: #8b1731;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+
+            height: 400px;
+
+            background-image:
+                linear-gradient(
+                    rgba(0,0,0,0.55),
+                    rgba(0,0,0,0.55)
+                ),
+                url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            color: white;
+        }
+
+        .hero-content h2 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+        }
+
+
+        /* =========================
+           COMMON SECTION
+        ========================= */
+
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+
+            text-align: center;
+
+            color: #8b1731;
+
+            font-size: 32px;
+
+            margin-bottom: 15px;
+        }
+
+        .section-description {
+
+            text-align: center;
+
+            max-width: 850px;
+
+            margin: 0 auto 40px;
+
+            color: #666;
+        }
+
+
+        /* =========================
+           INTRODUCTION
+        ========================= */
+
+        .intro {
+            background-color: white;
+        }
+
+        .intro-text {
+
+            max-width: 900px;
+
+            margin: auto;
+
+            text-align: center;
+
+            font-size: 17px;
+
+            color: #555;
+        }
+
+
+        /* =========================
+           FACILITY CARDS
+        ========================= */
+
+        .facilities {
+            background-color: #f5f5f5;
+        }
+
+        .facility-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .facility-card {
+
+            background-color: white;
+
+            padding: 30px 25px;
+
+            text-align: center;
+
+            border-radius: 8px;
+
+            box-shadow:
+                0 3px 12px rgba(0,0,0,0.10);
+
+            transition: 0.3s;
+        }
+
+        .facility-card:hover {
+
+            transform: translateY(-5px);
+        }
+
+        .facility-icon {
+
+            font-size: 45px;
+
+            margin-bottom: 15px;
+        }
+
+        .facility-card h3 {
+
+            color: #8b1731;
+
+            margin-bottom: 10px;
+
+            font-size: 20px;
+        }
+
+        .facility-card p {
+
+            color: #666;
+
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           ACADEMIC FACILITIES
+        ========================= */
+
+        .academic {
+            background-color: white;
+        }
+
+        .academic-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .academic-box {
+
+            background-color: #f8f8f8;
+
+            padding: 25px;
+
+            border-left: 5px solid #8b1731;
+        }
+
+        .academic-box h3 {
+
+            color: #8b1731;
+
+            margin-bottom: 10px;
+        }
+
+        .academic-box p {
+
+            color: #555;
+        }
+
+
+        /* =========================
+           STUDENT FACILITIES
+        ========================= */
+
+        .student-facilities {
+
+            background-color: #f5f5f5;
+        }
+
+        .student-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .student-box {
+
+            background-color: white;
+
+            padding: 25px 15px;
+
+            text-align: center;
+
+            border-radius: 8px;
+
+            border: 1px solid #ddd;
+        }
+
+        .student-box h3 {
+
+            color: #8b1731;
+
+            margin-bottom: 10px;
+
+            font-size: 18px;
+        }
+
+        .student-box p {
+
+            color: #666;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           CAMPUS AMENITIES
+        ========================= */
+
+        .amenities {
+
+            background-color: white;
+        }
+
+        .amenity-list {
+
+            max-width: 900px;
+
+            margin: auto;
+        }
+
+        .amenity-item {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 20px;
+
+            padding: 20px;
+
+            margin-bottom: 15px;
+
+            background-color: #f7f7f7;
+
+            border-radius: 6px;
+        }
+
+        .amenity-icon {
+
+            font-size: 30px;
+
+            min-width: 45px;
+        }
+
+        .amenity-item h3 {
+
+            color: #8b1731;
+
+            margin-bottom: 5px;
+        }
+
+        .amenity-item p {
+
+            color: #555;
+        }
+
+
+        /* =========================
+           FACILITY GUIDELINES
+        ========================= */
+
+        .guidelines {
+
+            background-color: #f5f5f5;
+        }
+
+        .guideline-content {
+
+            max-width: 850px;
+
+            margin: auto;
+
+            background-color: white;
+
+            padding: 30px;
+
+            border-radius: 8px;
+
+            box-shadow:
+                0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .guideline-content ul {
+
+            padding-left: 25px;
+        }
+
+        .guideline-content li {
+
+            margin-bottom: 12px;
+
+            color: #555;
+        }
+
+
+        /* =========================
+           QUICK LINKS
+        ========================= */
+
+        .quick-links {
+
+            background-color: white;
+        }
+
+        .quick-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .quick-card {
+
+            background-color: #8b1731;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px 15px;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+        .quick-card:hover {
+
+            background-color: #651124;
+
+            transform: translateY(-4px);
+        }
+
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+
+            background-color: #8b1731;
+
+            color: white;
+
+            text-align: center;
+        }
+
+        .cta h2 {
+
+            font-size: 32px;
+
+            margin-bottom: 10px;
+        }
+
+        .cta p {
+
+            margin-bottom: 20px;
+        }
+
+        .cta a {
+
+            display: inline-block;
+
+            background-color: white;
+
+            color: #8b1731;
+
+            text-decoration: none;
+
+            padding: 12px 25px;
+
+            border-radius: 5px;
+
+            font-weight: bold;
+        }
+
+        .cta a:hover {
+
+            background-color: #eee;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            background-color: #222;
+
+            color: white;
+
+            padding: 30px 0;
+
+            text-align: center;
+        }
+
+        footer p {
+
+            margin-bottom: 5px;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 1000px) {
+
+            .facility-grid {
+
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .student-grid {
+
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .quick-grid {
+
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
+        @media (max-width: 700px) {
+
+            .header-content {
+
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+            .university-name h1 {
+
+                font-size: 25px;
+            }
+
+            nav ul {
+
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+            nav ul li a {
+
+                padding: 10px;
+            }
+
+            .hero {
+
+                height: 300px;
+            }
+
+            .hero-content h2 {
+
+                font-size: 34px;
+            }
+
+            .hero-content p {
+
+                font-size: 16px;
+            }
+
+            .facility-grid,
+            .academic-grid,
+            .student-grid,
+            .quick-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            section {
+
+                padding: 40px 0;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         TOP BAR
+    ========================= -->
+
+    <div class="topbar">
+
+        Vignan University | Campus Facilities & Student Services
+
+    </div>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+
+        <div class="container header-content">
+
+            <div class="logo">
+                VU
+            </div>
+
+            <div class="university-name">
+
+                <h1>
+                    VIGNAN UNIVERSITY
+                </h1>
+
+                <p>
+                    Campus Facilities & Student Services
+                </p>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    HOME
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#about">
+                    ABOUT
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#campus-life">
+                    CAMPUS LIFE
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#services">
+                    SERVICES
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#events">
+                    EVENTS
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#contact">
+                    CONTACT
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h2>
+                Campus Facilities
+            </h2>
+
+            <p>
+                Modern Facilities for Learning, Living and Student Life
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         INTRODUCTION
+    ========================= -->
+
+    <section class="intro">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Facilities at Vignan University
+            </h2>
+
+            <p class="intro-text">
+
+                Vignan University provides a range of campus facilities
+                designed to support academic learning, student activities,
+                personal development and everyday campus life. These
+                facilities help create a comfortable and productive
+                environment for students, faculty and staff.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MAIN FACILITIES
+    ========================= -->
+
+    <section class="facilities">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Campus Facilities
+            </h2>
+
+            <p class="section-description">
+
+                Explore the major facilities available to support
+                students throughout their university experience.
+
+            </p>
+
+
+            <div class="facility-grid">
+
+
+                <!-- FACILITY 1 -->
+
+                <div class="facility-card">
+
+                    <div class="facility-icon">
+                        🏫
+                    </div>
+
+                    <h3>
+                        Smart Classrooms
+                    </h3>
+
+                    <p>
+
+                        Modern classrooms provide students with a
+                        comfortable environment for lectures,
+                        discussions, presentations and academic activities.
+
+                    </p>
+
+                </div>
+
+
+                <!-- FACILITY 2 -->
+
+                <div class="facility-card">
+
+                    <div class="facility-icon">
+                        🔬
+                    </div>
+
+                    <h3>
+                        Laboratories
+                    </h3>
+
+                    <p>
+
+                        Laboratory facilities provide opportunities for
+                        practical learning, experiments, project work and
+                        academic research.
+
+                    </p>
+
+                </div>
+
+
+                <!-- FACILITY 3 -->
+
+                <div class="facility-card">
+
+                    <div class="facility-icon">
+                        💻
+                    </div>
+
+                    <h3>
+                        Computer Facilities
+                    </h3>
+
+                    <p>
+
+                        Computer facilities support academic assignments,
+                        programming, research, online learning and other
+                        digital activities.
+
+                    </p>
+
+                </div>
+
+
+                <!-- FACILITY 4 -->
+
+                <div class="facility-card">
+
+                    <div class="facility-icon">
+                        📚
+                    </div>
+
+                    <h3>
+                        Central Library
+                    </h3>
+
+                    <p>
+
+                        The library provides access to books, reference
+                        materials and learning resources for students and
+                        faculty members.
+
+                    </p>
+
+                </div>
+
+
+                <!-- FACILITY 5 -->
+
+                <div class="facility-card">
+
+                    <div class="facility-icon">
+                        🏠
+                    </div>
+
+                    <h3>
+                        Hostel Facilities
+                    </h3>
+
+                    <p>
+
+                        Residential facilities provide students with
+                        accommodation and essential services for comfortable
+                        campus living.
+
+                    </p>
+
+                </div>
+
+
+                <!-- FACILITY 6 -->
+
+                <div class="facility-card">
+
+                    <div class="facility-icon">
+                        🏥
+                    </div>
+
+                    <h3>
+                        Medical Facilities
+                    </h3>
+
+                    <p>
+
+                        Medical support facilities help students access
+                        basic healthcare assistance when required.
+
+                    </p>
+
+                </div>
+
+
+                <!-- FACILITY 7 -->
+
+                <div class="facility-card">
+
+                    <div class="facility-icon">
+                        🍽️
+                    </div>
+
+                    <h3>
+                        Cafeteria
+                    </h3>
+
+                    <p>
+
+                        Campus food facilities provide students with
+                        convenient options for meals, refreshments and
+                        everyday dining needs.
+
+                    </p>
+
+                </div>
+
+
+                <!-- FACILITY 8 -->
+
+                <div class="facility-card">
+
+                    <div class="facility-icon">
+                        🏟️
+                    </div>
+
+                    <h3>
+                        Sports Facilities
+                    </h3>
+
+                    <p>
+
+                        Sports facilities encourage students to participate
+                        in physical activities, games, fitness and
+                        recreational programs.
+
+                    </p>
+
+                </div>
+
+
+                <!-- FACILITY 9 -->
+
+                <div class="facility-card">
+
+                    <div class="facility-icon">
+                        🚌
+                    </div>
+
+                    <h3>
+                        Transportation
+                    </h3>
+
+                    <p>
+
+                        Transportation facilities support convenient travel
+                        between the campus and designated locations.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ACADEMIC FACILITIES
+    ========================= -->
+
+    <section class="academic">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Academic Facilities
+            </h2>
+
+            <p class="section-description">
+
+                Facilities that support teaching, practical education,
+                research and academic development.
+
+            </p>
+
+
+            <div class="academic-grid">
+
+
+                <div class="academic-box">
+
+                    <h3>
+                        📖 Classrooms & Learning Spaces
+                    </h3>
+
+                    <p>
+
+                        Classrooms provide a structured environment for
+                        lectures, seminars, group discussions, presentations
+                        and other academic activities.
+
+                    </p>
+
+                </div>
+
+
+                <div class="academic-box">
+
+                    <h3>
+                        🔬 Research & Laboratories
+                    </h3>
+
+                    <p>
+
+                        Laboratory and research facilities support practical
+                        education, experimentation, innovation and project
+                        development.
+
+                    </p>
+
+                </div>
+
+
+                <div class="academic-box">
+
+                    <h3>
+                        💻 Digital Learning
+                    </h3>
+
+                    <p>
+
+                        Digital facilities help students use computers,
+                        online resources, educational platforms and
+                        technology-based learning tools.
+
+                    </p>
+
+                </div>
+
+
+                <div class="academic-box">
+
+                    <h3>
+                        📚 Library Resources
+                    </h3>
+
+                    <p>
+
+                        Library resources support reading, academic research,
+                        assignments, examination preparation and independent
+                        learning.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         STUDENT FACILITIES
+    ========================= -->
+
+    <section class="student-facilities">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Student Facilities
+            </h2>
+
+            <p class="section-description">
+
+                Everyday facilities that help students enjoy a comfortable
+                and engaging campus experience.
+
+            </p>
+
+
+            <div class="student-grid">
+
+
+                <div class="student-box">
+
+                    <h3>
+                        🏠 Accommodation
+                    </h3>
+
+                    <p>
+
+                        Hostel facilities provide residential support for
+                        students living on campus.
+
+                    </p>
+
+                </div>
+
+
+                <div class="student-box">
+
+                    <h3>
+                        🍴 Food Services
+                    </h3>
+
+                    <p>
+
+                        Cafeteria and dining facilities provide convenient
+                        food and refreshment options.
+
+                    </p>
+
+                </div>
+
+
+                <div class="student-box">
+
+                    <h3>
+                        ⚽ Recreation
+                    </h3>
+
+                    <p>
+
+                        Sports and recreational facilities encourage
+                        physical activity and student participation.
+
+                    </p>
+
+                </div>
+
+
+                <div class="student-box">
+
+                    <h3>
+                        🎭 Student Activities
+                    </h3>
+
+                    <p>
+
+                        Clubs, events and activity spaces encourage
+                        creativity, teamwork and leadership.
+
+                    </p>
+
+                </div>
+
+
+                <div class="student-box">
+
+                    <h3>
+                        🚌 Transportation
+                    </h3>
+
+                    <p>
+
+                        Transportation facilities support convenient
+                        student travel.
+
+                    </p>
+
+                </div>
+
+
+                <div class="student-box">
+
+                    <h3>
+                        🏥 Healthcare
+                    </h3>
+
+                    <p>
+
+                        Healthcare support is available for students when
+                        basic medical assistance is required.
+
+                    </p>
+
+                </div>
+
+
+                <div class="student-box">
+
+                    <h3>
+                        📶 Internet Access
+                    </h3>
+
+                    <p>
+
+                        Internet and digital connectivity support academic
+                        and communication requirements.
+
+                    </p>
+
+                </div>
+
+
+                <div class="student-box">
+
+                    <h3>
+                        🔐 Security
+                    </h3>
+
+                    <p>
+
+                        Campus security measures help maintain a safe
+                        environment for students and staff.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CAMPUS AMENITIES
+    ========================= -->
+
+    <section class="amenities">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Campus Amenities
+            </h2>
+
+            <p class="section-description">
+
+                Additional facilities that contribute to a comfortable
+                and supportive campus environment.
+
+            </p>
+
+
+            <div class="amenity-list">
+
+
+                <div class="amenity-item">
+
+                    <div class="amenity-icon">
+                        🏛️
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Auditorium & Seminar Halls
+                        </h3>
+
+                        <p>
+
+                            Spaces for seminars, conferences, cultural
+                            programs, presentations, workshops and university
+                            events.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="amenity-item">
+
+                    <div class="amenity-icon">
+                        📶
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Internet & Wi-Fi
+                        </h3>
+
+                        <p>
+
+                            Digital connectivity supports online learning,
+                            academic research, communication and other
+                            student activities.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="amenity-item">
+
+                    <div class="amenity-icon">
+                        🏦
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Banking & Essential Services
+                        </h3>
+
+                        <p>
+
+                            Convenient access to essential services can help
+                            students manage their everyday campus needs.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="amenity-item">
+
+                    <div class="amenity-icon">
+                        🛡️
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Campus Security
+                        </h3>
+
+                        <p>
+
+                            Security facilities help maintain a safe and
+                            orderly environment across the university campus.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="amenity-item">
+
+                    <div class="amenity-icon">
+                        🌳
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Green & Recreational Spaces
+                        </h3>
+
+                        <p>
+
+                            Open and recreational spaces provide students
+                            with areas for relaxation and informal
+                            interaction.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FACILITY GUIDELINES
+    ========================= -->
+
+    <section class="guidelines">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Facility Guidelines
+            </h2>
+
+            <p class="section-description">
+
+                Students are encouraged to use university facilities
+                responsibly.
+
+            </p>
+
+
+            <div class="guideline-content">
+
+                <ul>
+
+                    <li>
+                        Maintain cleanliness in all campus facilities.
+                    </li>
+
+                    <li>
+                        Handle university equipment and resources carefully.
+                    </li>
+
+                    <li>
+                        Follow the rules and instructions applicable to
+                        each facility.
+                    </li>
+
+                    <li>
+                        Respect other students, faculty and staff while
+                        using shared facilities.
+                    </li>
+
+                    <li>
+                        Report damaged equipment or facility-related
+                        problems to the concerned department.
+                    </li>
+
+                    <li>
+                        Follow safety instructions in laboratories,
+                        classrooms, sports areas and other facilities.
+                    </li>
+
+                    <li>
+                        Use university resources for their intended
+                        academic or student-support purposes.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         QUICK LINKS
+    ========================= -->
+
+    <section class="quick-links">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Explore Campus Life
+            </h2>
+
+
+            <div class="quick-grid">
+
+
+                <a href="hostels.html" class="quick-card">
+
+                    🏠
+                    <br>
+
+                    Hostels
+
+                </a>
+
+
+                <a href="sports.html" class="quick-card">
+
+                    ⚽
+                    <br>
+
+                    Sports
+
+                </a>
+
+
+                <a href="clubs.html" class="quick-card">
+
+                    🎭
+                    <br>
+
+                    Clubs
+
+                </a>
+
+
+                <a href="library.html" class="quick-card">
+
+                    📚
+                    <br>
+
+                    Library
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CTA
+    ========================= -->
+
+    <section class="cta">
+
+        <div class="container">
+
+            <h2>
+                Experience Campus Life
+            </h2>
+
+            <p>
+
+                Make use of the university facilities and enjoy a
+                comfortable, productive and engaging campus experience.
+
+            </p>
+
+            <a href="index.html#campus-life">
+
+                Back to Campus Life
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+                © 2026 Vignan University
+            </p>
+
+            <p>
+                Campus Facilities & Student Services
+            </p>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
+```
